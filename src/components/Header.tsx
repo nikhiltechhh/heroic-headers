@@ -1,17 +1,15 @@
-import { Menu, Search, User, Heart, ShoppingBag, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom"; // React Router Link
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Menu, X, User, Heart, ShoppingBag, Search } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "unset";
     return () => {
       document.body.style.overflow = "unset";
     };
@@ -21,17 +19,26 @@ const Header = () => {
     { name: "Shop", href: "#Products" },
     { name: "Best Sellers", href: "#best" },
     { name: "About", href: "#about" },
-    { name: "Blog", href: "/blog", isPage: true }, // React Router page
+    { name: "Blog", href: "/blog", isPage: true },
   ];
 
   const handleNavClick = (href: string) => {
-    if (href.startsWith("#")) {
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }
     setMobileMenuOpen(false);
+
+    if (href.startsWith("#")) {
+      // If already on home page, scroll
+      if (location.pathname === "/") {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      } else {
+        // Navigate to home page with hash
+        navigate(`/${href}`);
+      }
+    } else {
+      navigate(href);
+    }
   };
 
   return (
@@ -48,7 +55,7 @@ const Header = () => {
               {mobileMenuOpen ? <X className="h-8 w-8 animate-scale-in" /> : <Menu className="h-8 w-8 animate-scale-in" />}
             </button>
 
-            {/* Desktop Navigation - Left */}
+            {/* Desktop Nav */}
             <div className="hidden lg:flex items-center space-x-8">
               {navItems.map((item) =>
                 item.isPage ? (
@@ -71,7 +78,7 @@ const Header = () => {
               )}
             </div>
 
-            {/* Logo - Center */}
+            {/* Logo */}
             <div className="absolute left-1/2 transform -translate-x-1/2 lg:static lg:transform-none">
               <Link
                 to="/"
@@ -81,36 +88,29 @@ const Header = () => {
               </Link>
             </div>
 
-            {/* Icons - Right */}
-            {/* Icons - Right */}
-<div className="flex items-center space-x-4 lg:space-x-6">
-  <Button variant="ghost" className="hidden sm:flex hover-scale p-0" aria-label="Account">
-    <div className="w-12 h-12 flex items-center justify-center">
-      <User className="w-8 h-8" />
-    </div>
-  </Button>
-
-  <Button variant="ghost" className="hover-scale p-0" aria-label="Search">
-    <div className="w-12 h-12 flex items-center justify-center">
-      <Search className="w-8 h-8" />
-    </div>
-  </Button>
-
-  <Button variant="ghost" className="hidden sm:flex hover-scale p-0" aria-label="Wishlist">
-    <div className="w-12 h-12 flex items-center justify-center">
-      <Heart className="w-8 h-8" />
-    </div>
-  </Button>
-
-  <Button variant="ghost" className="hover-scale p-0" aria-label="Cart">
-    <div className="w-12 h-12 flex items-center justify-center">
-      <ShoppingBag className="w-8 h-8" />
-    </div>
-  </Button>
-
-  <div className="hidden lg:block text-sm font-medium tracking-wider"></div>
-</div>
-
+            {/* Icons */}
+            <div className="flex items-center space-x-4 lg:space-x-6">
+              <Button variant="ghost" className="hidden sm:flex hover-scale p-0" aria-label="Account">
+                <div className="w-12 h-12 flex items-center justify-center">
+                  <User className="w-8 h-8" />
+                </div>
+              </Button>
+              <Button variant="ghost" className="hover-scale p-0" aria-label="Search">
+                <div className="w-12 h-12 flex items-center justify-center">
+                  <Search className="w-8 h-8" />
+                </div>
+              </Button>
+              <Button variant="ghost" className="hidden sm:flex hover-scale p-0" aria-label="Wishlist">
+                <div className="w-12 h-12 flex items-center justify-center">
+                  <Heart className="w-8 h-8" />
+                </div>
+              </Button>
+              <Button variant="ghost" className="hover-scale p-0" aria-label="Cart">
+                <div className="w-12 h-12 flex items-center justify-center">
+                  <ShoppingBag className="w-8 h-8" />
+                </div>
+              </Button>
+            </div>
           </div>
         </nav>
       </header>
@@ -118,10 +118,7 @@ const Header = () => {
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
         <>
-          <div
-            className="fixed inset-0 bg-black/50 z-40 lg:hidden animate-fade-in"
-            onClick={() => setMobileMenuOpen(false)}
-          />
+          <div className="fixed inset-0 bg-black/50 z-40 lg:hidden animate-fade-in" onClick={() => setMobileMenuOpen(false)} />
           <div className="fixed top-16 left-0 right-0 bottom-0 bg-card z-40 lg:hidden animate-slide-in-right overflow-y-auto">
             <div className="container mx-auto px-4 py-8">
               <div className="flex flex-col space-y-6">
@@ -148,7 +145,6 @@ const Header = () => {
                   )
                 )}
 
-                {/* Mobile Menu Additional Options */}
                 <div className="pt-6 flex flex-col space-y-4 animate-fade-in" style={{ animationDelay: "0.5s" }}>
                   <Button variant="outline" className="w-full justify-start space-x-3 h-12">
                     <User className="h-8 w-8" />
