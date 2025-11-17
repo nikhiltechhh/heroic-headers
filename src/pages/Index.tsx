@@ -1,6 +1,9 @@
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Products from "@/components/Products";
+import About from "@/components/About";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -8,6 +11,9 @@ const Index = () => {
       <AnnouncementBar />
       <Header />
       <Hero />
+      <Products />
+      <About />
+      <Footer />
     </div>
   );
 };
