@@ -84,27 +84,30 @@ const About: React.FC = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light mb-6 tracking-tight">
-                Radiant Skin,
+                Where Tradition
                 <br />
-                <span className="text-emerald-600">Naturally Achieved</span>
+                <span className="text-emerald-600">Meets Couture</span>
               </h1>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                At GlowSkin, we believe that beautiful skin starts with clean, effective ingredients. Our mission is to transform your skincare routine into a moment of self-care while delivering visible results you can trust.
+                Swanky Styles is a premium ethnic design boutique creating handcrafted outfits for weddings, festivities, celebrity appearances, photoshoots, and once-in-a-lifetime moments. We specialise in custom couture, blending traditional artistry with modern silhouettes.
+              </p>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                Every outfit is made-to-measure, hand-detailed, and designed with intentional elegance. From bridal lehengas to designer sarees, from trousseau planning to AI visual previews — everything begins with your story.
               </p>
               <div className="flex flex-wrap gap-4">
-                <button className="px-8 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition-colors font-medium">
-                  Shop Our Story
+                <button className="px-8 py-3 bg-black text-white hover:bg-gray-800 transition-colors font-medium">
+                  Explore Collections
                 </button>
-                <button className="px-8 py-3 border-2 border-black text-black rounded-full hover:bg-black hover:text-white transition-colors font-medium">
-                  Take Skin Quiz
+                <button className="px-8 py-3 border-2 border-black text-black  hover:bg-black hover:text-white transition-colors font-medium">
+                  Book Consultation
                 </button>
               </div>
             </div>
             <div className="relative">
               <div className="aspect-square rounded-2xl overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800&h=800&fit=crop"
-                  alt="Skincare products"
+                  src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800&h=800&fit=crop"
+                  alt="Designer ethnic wear"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -114,8 +117,8 @@ const About: React.FC = () => {
                     <Sparkles className="w-6 h-6 text-emerald-600" />
                   </div>
                   <div>
-                    <p className="font-semibold text-2xl">98%</p>
-                    <p className="text-sm text-gray-600">Customer Satisfaction</p>
+                    <p className="font-semibold text-2xl">100%</p>
+                    <p className="text-sm text-gray-600">Handcrafted Couture</p>
                   </div>
                 </div>
               </div>

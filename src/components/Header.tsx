@@ -1,166 +1,176 @@
-import { useState, useEffect } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Menu, X, User, Heart, ShoppingBag, Search } from "lucide-react";
-import { Button } from "@/components/ui/button";
+// Header.tsx
+import React, { useState, useEffect } from 'react';
+import { Search, User, Heart, ShoppingCart, X } from 'lucide-react';
 
-const Header = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  useEffect(() => {
-    document.body.style.overflow = mobileMenuOpen ? "hidden" : "unset";
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [mobileMenuOpen]);
-
-  const navItems = [
-    { name: "Shop", href: "#Products" },
-    { name: "Best Sellers", href: "#best" },
-    { name: "About", href: "#about" },
-    { name: "Blog", href: "/blog", isPage: true },
+// Continuous Scrolling Promo Banner
+const PromoBanner = () => {
+  const promos = [
+    { icon: '⚡', text: '"Swanky Styles" for 15% Off on Orders above 100k' },
+    { icon: '⚡', text: 'Use "Swanky Styles" for 5% Off on Orders above 30k' },
+    { icon: '⚡', text: 'Use "Swanky Styles" for 10% Off on Orders above 60k' },
   ];
 
-  const handleNavClick = (href: string) => {
-    setMobileMenuOpen(false);
-
-    if (href.startsWith("#")) {
-      // If already on home page, scroll
-      if (location.pathname === "/") {
-        const element = document.querySelector(href);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-      } else {
-        // Navigate to home page with hash
-        navigate(`/${href}`);
-      }
-    } else {
-      navigate(href);
-    }
-  };
+  // Duplicate promos for continuous scroll effect
+  const extendedPromos = [...promos, ...promos, ...promos];
 
   return (
-    <>
-      <header className="bg-card border-b border-border sticky top-0 z-50">
-        <nav className="container mx-auto px-4 lg:px-8">
-          <div className="flex items-center justify-between h-16 lg:h-20">
-            {/* Mobile Menu Button */}
-            <button
-              className="lg:hidden p-2 z-50 relative transition-transform hover:scale-110"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? <X className="h-8 w-8 animate-scale-in" /> : <Menu className="h-8 w-8 animate-scale-in" />}
-            </button>
+    <div className="bg-slate-800 text-white py-3 px-4 overflow-hidden">
+      <div className="flex items-center animate-scroll gap-8">
+        {extendedPromos.map((promo, idx) => (
+          <div key={idx} className="flex items-center gap-3 whitespace-nowrap min-w-max">
+            <span className="text-xl">{promo.icon}</span>
+            <span className="text-sm font-medium">{promo.text}</span>
+          </div>
+        ))}
+      </div>
 
-            {/* Desktop Nav */}
-            <div className="hidden lg:flex items-center space-x-8">
-              {navItems.map((item) =>
-                item.isPage ? (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className="text-foreground hover:text-primary transition-all duration-300 text-sm font-medium tracking-wide relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
-                  >
-                    {item.name}
-                  </Link>
-                ) : (
-                  <button
-                    key={item.name}
-                    onClick={() => handleNavClick(item.href)}
-                    className="text-foreground hover:text-primary transition-all duration-300 text-sm font-medium tracking-wide relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
-                  >
-                    {item.name}
-                  </button>
-                )
-              )}
+      <style>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-33.333%);
+          }
+        }
+        .animate-scroll {
+          animation: scroll 20s linear infinite;
+        }
+      `}</style>
+    </div>
+  );
+};
+
+// Header Component
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navItems = ['HOME', 'SHOP ALL', 'SHOP BY', 'NEW ARRIVALS', 'TRENDING'];
+
+  return (
+    <header className="bg-white">
+      {/* Promo Banner */}
+      <PromoBanner />
+
+      {/* Main Header */}
+      <div className="border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Top Row */}
+          <div className="flex items-center justify-between h-16">
+            {/* Left - Call Us */}
+            <div className="hidden lg:block text-sm font-medium text-gray-800 flex-1">
+              Call Us: <span className="font-bold">99666 56775</span>
             </div>
 
-            {/* Logo */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 lg:static lg:transform-none">
-              <Link
-                to="/"
-                className="text-2xl lg:text-3xl font-light tracking-[0.3em] text-foreground transition-all duration-300 hover:tracking-[0.35em]"
+            {/* Logo - Center */}
+<div className="flex items-center gap-3">
+  <img
+    src="https://i.ibb.co/DDxzqkTG/swankystyles.png"
+    alt="Logo"
+    className="w-16 h-16 object-contain"
+  />
+
+  <p className="text-sm text-gray-700 tracking-wide font-medium">
+    Swanky Styles
+  </p>
+</div>
+
+
+            {/* Right - Search & Icons */}
+            <div className="flex items-center gap-3 sm:gap-6 flex-1 justify-end">
+              {/* Search - Hidden on mobile */}
+              <div className="hidden lg:flex items-center border-b border-gray-300 hover:border-gray-800 transition">
+                <input
+                  type="text"
+                  placeholder="Search"
+                  className="bg-transparent outline-none px-2 py-1 text-sm w-40"
+                />
+                <Search size={18} className="text-gray-600 cursor-pointer" />
+              </div>
+
+              {/* Icons */}
+              <button className="p-1 hover:bg-gray-100 rounded transition">
+                <User size={20} className="text-gray-600 hover:text-gray-900" />
+              </button>
+              <button className="p-1 hover:bg-gray-100 rounded transition">
+                <Heart size={20} className="text-gray-600 hover:text-gray-900" />
+              </button>
+              <button className="p-1 hover:bg-gray-100 rounded transition relative">
+                <ShoppingCart size={20} className="text-gray-600 hover:text-gray-900" />
+                <span className="absolute -top-1 -right-1 bg-gray-900 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium">
+                  0
+                </span>
+              </button>
+
+              {/* Mobile Menu Toggle */}
+              <button
+                className="md:hidden p-1 hover:bg-gray-100 rounded transition"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
-                KITSAC
-              </Link>
+                {isMenuOpen ? (
+                  <X size={24} className="text-gray-900" />
+                ) : (
+                  <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                )}
+              </button>
             </div>
+          </div>
 
-            {/* Icons */}
-            <div className="flex items-center space-x-4 lg:space-x-6">
-              <Button variant="ghost" className="hidden sm:flex hover-scale p-0" aria-label="Account">
-                <div className="w-12 h-12 flex items-center justify-center">
-                  <User className="w-8 h-8" />
-                </div>
-              </Button>
-              <Button variant="ghost" className="hover-scale p-0" aria-label="Search">
-                <div className="w-12 h-12 flex items-center justify-center">
-                  <Search className="w-8 h-8" />
-                </div>
-              </Button>
-              <Button variant="ghost" className="hidden sm:flex hover-scale p-0" aria-label="Wishlist">
-                <div className="w-12 h-12 flex items-center justify-center">
-                  <Heart className="w-8 h-8" />
-                </div>
-              </Button>
-              <Button variant="ghost" className="hover-scale p-0" aria-label="Cart">
-                <div className="w-12 h-12 flex items-center justify-center">
-                  <ShoppingBag className="w-8 h-8" />
-                </div>
-              </Button>
+          {/* Navigation - Desktop */}
+          <nav className="hidden md:flex items-center justify-center h-16 text-sm font-medium tracking-wide gap-8">
+            {navItems.map((item) => (
+              <a
+                key={item}
+                href="#"
+                className={`transition duration-300 pb-2 border-b-2 border-transparent ${
+                  item === 'SHOP BY'
+                    ? 'text-red-500 border-b-2 border-red-500'
+                    : 'text-gray-800 hover:text-red-500 hover:border-b-2 hover:border-red-500'
+                }`}
+              >
+                {item}
+              </a>
+            ))}
+          </nav>
+        </div>
+      </div>
+
+      {/* Mobile Navigation Menu */}
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          isMenuOpen ? 'max-h-96' : 'max-h-0'
+        }`}
+      >
+        <nav className="bg-gray-50 border-t border-gray-200">
+          <div className="px-4 py-4 space-y-3">
+            {navItems.map((item) => (
+              <a
+                key={item}
+                href="#"
+                className={`block py-2 px-4 rounded transition duration-300 ${
+                  item === 'SHOP BY'
+                    ? 'text-red-500 bg-red-50 font-medium'
+                    : 'text-gray-800 hover:bg-gray-200'
+                }`}
+              >
+                {item}
+              </a>
+            ))}
+            {/* Mobile Search */}
+            <div className="flex items-center border border-gray-300 rounded px-3 py-2 mt-4">
+              <input
+                type="text"
+                placeholder="Search"
+                className="bg-transparent outline-none text-sm w-full"
+              />
+              <Search size={16} className="text-gray-600" />
             </div>
           </div>
         </nav>
-      </header>
-
-      {/* Mobile Menu Overlay */}
-      {mobileMenuOpen && (
-        <>
-          <div className="fixed inset-0 bg-black/50 z-40 lg:hidden animate-fade-in" onClick={() => setMobileMenuOpen(false)} />
-          <div className="fixed top-16 left-0 right-0 bottom-0 bg-card z-40 lg:hidden animate-slide-in-right overflow-y-auto">
-            <div className="container mx-auto px-4 py-8">
-              <div className="flex flex-col space-y-6">
-                {navItems.map((item, index) =>
-                  item.isPage ? (
-                    <Link
-                      key={item.name}
-                      to={item.href}
-                      className="text-foreground hover:text-primary transition-all duration-300 text-lg font-medium py-3 border-b border-border hover:border-primary animate-fade-in"
-                      style={{ animationDelay: `${index * 0.1}s` }}
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                  ) : (
-                    <button
-                      key={item.name}
-                      onClick={() => handleNavClick(item.href)}
-                      className="text-foreground hover:text-primary transition-all duration-300 text-lg font-medium py-3 border-b border-border hover:border-primary animate-fade-in"
-                      style={{ animationDelay: `${index * 0.1}s` }}
-                    >
-                      {item.name}
-                    </button>
-                  )
-                )}
-
-                <div className="pt-6 flex flex-col space-y-4 animate-fade-in" style={{ animationDelay: "0.5s" }}>
-                  <Button variant="outline" className="w-full justify-start space-x-3 h-12">
-                    <User className="h-8 w-8" />
-                    <span>My Account</span>
-                  </Button>
-                  <Button variant="outline" className="w-full justify-start space-x-3 h-12">
-                    <Heart className="h-8 w-8" />
-                    <span>Wishlist</span>
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </>
-      )}
-    </>
+      </div>
+    </header>
   );
 };
 

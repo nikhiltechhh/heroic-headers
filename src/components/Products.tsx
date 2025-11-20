@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Heart, ShoppingBag, Plus, Minus } from 'lucide-react';
+import { Eye, ShoppingBag, Plus, Minus, X } from 'lucide-react';
 
 interface Product {
   id: number;
@@ -15,139 +15,139 @@ interface Product {
 const products: Product[] = [
   {
     id: 1,
-    name: "Gentle Foaming Cleanser",
-    description: "pH-balanced cleanser that removes impurities without stripping skin",
-    price: 22.00,
-    originalPrice: 28.00,
-    image: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=500&h=500&fit=crop",
+    name: "Elegant Silk Saree",
+    description: "Traditional handwoven silk saree with intricate golden border work",
+    price: 299.00,
+    originalPrice: 399.00,
+    image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500&h=500&fit=crop",
     badges: ["New"],
-    category: "Cleanser"
+    category: "Sarees"
   },
   {
     id: 2,
-    name: "Hydrating Toner",
-    description: "Alcohol-free toner with hyaluronic acid for instant hydration",
-    price: 24.00,
-    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=500&h=500&fit=crop",
+    name: "Designer Bridal Lehenga",
+    description: "Heavily embroidered bridal lehenga with zari and sequin work",
+    price: 899.00,
+    image: "https://images.unsplash.com/photo-1583391733956-6c78276477e6?w=500&h=500&fit=crop",
     badges: ["Best"],
-    category: "Toner"
+    category: "Lehengas"
   },
   {
     id: 3,
-    name: "Vitamin C Serum",
-    description: "Brightening serum with 20% vitamin C for radiant skin",
-    price: 45.00,
-    originalPrice: 55.00,
-    image: "https://img.freepik.com/premium-photo/vitamin-c-serum-bottle-with-orange-slice-organic-cosmetics_875825-89523.jpg",
+    name: "Floral Summer Dress",
+    description: "Lightweight cotton dress with beautiful floral prints perfect for summer",
+    price: 89.00,
+    originalPrice: 120.00,
+    image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&h=500&fit=crop",
     badges: ["Best", "New"],
-    category: "Ampoule & Serum"
+    category: "Dresses"
   },
   {
     id: 4,
-    name: "Rich Moisturizer",
-    description: "Deep hydration cream with ceramides for all-day moisture",
-    price: 38.00,
-    image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=500&h=500&fit=crop",
-    category: "Moisturizer"
+    name: "Banarasi Silk Saree",
+    description: "Pure Banarasi silk with traditional brocade patterns and rich pallu",
+    price: 450.00,
+    image: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=500&h=500&fit=crop",
+    category: "Sarees"
   },
   {
     id: 5,
-    name: "Clay Purifying Mask",
-    description: "Detoxifying clay mask that deep cleans pores",
-    price: 28.00,
-    originalPrice: 35.00,
-    image: "https://images.unsplash.com/photo-1570554886111-e80fcca6a029?w=500&h=500&fit=crop",
-    badges: ["Vegan"],
-    category: "Mask & Treatment"
+    name: "Pastel Party Lehenga",
+    description: "Contemporary lehenga in soft pastel shades with mirror work details",
+    price: 650.00,
+    originalPrice: 800.00,
+    image: "https://images.unsplash.com/photo-1598831541649-05e8248b5a5f?w=500&h=500&fit=crop",
+    badges: ["Trending"],
+    category: "Lehengas"
   },
   {
     id: 6,
-    name: "SPF 50 Sunscreen",
-    description: "Lightweight broad-spectrum protection with no white cast",
-    price: 32.00,
-    image: "https://img.freepik.com/premium-vector/mobile_907924-18.jpg",
+    name: "Maxi Evening Dress",
+    description: "Elegant floor-length evening dress with sequin embellishments",
+    price: 199.00,
+    image: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=500&h=500&fit=crop",
     badges: ["Best"],
-    category: "Sunscreen"
+    category: "Dresses"
   },
   {
     id: 7,
-    name: "Nourishing Lip Balm",
-    description: "Ultra-hydrating lip treatment with vitamin E",
-    price: 12.00,
-    image: "https://images.unsplash.com/photo-1515688594390-b649af70d282?w=500&h=500&fit=crop",
-    category: "Lip Care"
+    name: "Cotton Anarkali Dress",
+    description: "Comfortable cotton anarkali with ethnic prints and flared silhouette",
+    price: 75.00,
+    image: "https://images.unsplash.com/photo-1583391733956-6c78276477e6?w=500&h=500&fit=crop",
+    category: "Dresses"
   },
   {
     id: 8,
-    name: "Complete Skincare Set",
-    description: "Full routine set with cleanser, toner, serum, and moisturizer",
-    price: 95.00,
-    originalPrice: 120.00,
-    image: "https://images.unsplash.com/photo-1571875257727-256c39da42af?w=500&h=500&fit=crop",
+    name: "Festive Collection Set",
+    description: "Complete festive outfit with coordinated accessories and dupatta",
+    price: 399.00,
+    originalPrice: 550.00,
+    image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500&h=500&fit=crop",
     badges: ["Best", "New"],
     category: "Sets"
   },
   {
     id: 9,
-    name: "Beauty Headband",
-    description: "Soft microfiber headband for your skincare routine",
-    price: 8.00,
-    image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=500&h=500&fit=crop",
-    category: "Merchandise"
+    name: "Designer Clutch Bag",
+    description: "Handcrafted clutch with traditional embroidery perfect for any occasion",
+    price: 45.00,
+    image: "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=500&h=500&fit=crop",
+    category: "Accessories"
   },
   {
     id: 10,
-    name: "Acne Spot Treatment",
-    description: "Fast-acting treatment with salicylic acid for blemishes",
-    price: 18.00,
-    image: "https://images.unsplash.com/photo-1556228841-1d99e2f1c4e8?w=500&h=500&fit=crop",
+    name: "Georgette Cocktail Dress",
+    description: "Stylish georgette dress with contemporary cuts and embellishments",
+    price: 149.00,
+    image: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=500&h=500&fit=crop",
     badges: ["New"],
-    category: "Acne & Breakout"
+    category: "Dresses"
   },
   {
     id: 11,
-    name: "Pore Minimizing Toner",
-    description: "Niacinamide toner that visibly reduces pore appearance",
-    price: 26.00,
-    image: "https://images.unsplash.com/photo-1612817288484-6f916006741a?w=500&h=500&fit=crop",
-    category: "Pores"
+    name: "Kanjivaram Silk Saree",
+    description: "Authentic Kanjivaram silk saree with temple border and rich texture",
+    price: 550.00,
+    image: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=500&h=500&fit=crop",
+    category: "Sarees"
   },
   {
     id: 12,
-    name: "Brightening Essence",
-    description: "Alpha arbutin essence for even skin tone",
-    price: 35.00,
-    originalPrice: 42.00,
-    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=500&h=500&fit=crop",
-    badges: ["Vegan"],
-    category: "Dullness & Tone"
+    name: "Velvet Wedding Lehenga",
+    description: "Luxurious velvet lehenga with stone work and pearl embellishments",
+    price: 1200.00,
+    originalPrice: 1500.00,
+    image: "https://images.unsplash.com/photo-1598831541649-05e8248b5a5f?w=500&h=500&fit=crop",
+    badges: ["Premium"],
+    category: "Lehengas"
   },
   {
     id: 13,
-    name: "Retinol Night Cream",
-    description: "Anti-aging cream with retinol for smoother skin",
-    price: 48.00,
-    image: "https://images.unsplash.com/photo-1617897903246-719242758050?w=500&h=500&fit=crop",
-    category: "Wrinkles"
+    name: "Chiffon Print Saree",
+    description: "Lightweight chiffon saree with modern digital prints and lace border",
+    price: 180.00,
+    image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500&h=500&fit=crop",
+    category: "Sarees"
   },
   {
     id: 14,
-    name: "Calming Centella Serum",
-    description: "Soothing serum for sensitive and irritated skin",
-    price: 30.00,
-    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=500&h=500&fit=crop",
-    badges: ["Best", "Vegan"],
-    category: "Sensitive Skin"
+    name: "Embroidered Midi Dress",
+    description: "Hand-embroidered midi dress with contemporary ethnic fusion design",
+    price: 129.00,
+    image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&h=500&fit=crop",
+    badges: ["Best", "Trending"],
+    category: "Dresses"
   },
   {
     id: 15,
-    name: "Hyaluronic Acid Cream",
-    description: "Intensive hydration with triple hyaluronic acid complex",
-    price: 40.00,
-    originalPrice: 50.00,
-    image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=500&h=500&fit=crop",
+    name: "Net Sangeet Lehenga",
+    description: "Glamorous net lehenga with sequin work perfect for sangeet ceremonies",
+    price: 750.00,
+    originalPrice: 950.00,
+    image: "https://images.unsplash.com/photo-1583391733956-6c78276477e6?w=500&h=500&fit=crop",
     badges: ["New"],
-    category: "Dry & Dehydrated Skin"
+    category: "Lehengas"
   }
 ];
 
@@ -155,13 +155,18 @@ interface CartItem extends Product {
   quantity: number;
 }
 
-const Products: React.FC = () => {
-  const [showAll, setShowAll] = useState(false);
+const Index: React.FC = () => {
+  const [visibleCount, setVisibleCount] = useState(6);
   const [cart, setCart] = useState<CartItem[]>([]);
-  const [favorites, setFavorites] = useState<number[]>([]);
   const [showCart, setShowCart] = useState(false);
+  const [previewImage, setPreviewImage] = useState<string | null>(null);
 
-  const displayedProducts = showAll ? products : products.slice(0, 6);
+  const displayedProducts = products.slice(0, visibleCount);
+  const hasMoreProducts = visibleCount < products.length;
+
+  const loadMoreProducts = () => {
+    setVisibleCount(prev => Math.min(prev + 6, products.length));
+  };
 
   const addToCart = (product: Product) => {
     setCart(prevCart => {
@@ -191,14 +196,6 @@ const Products: React.FC = () => {
     });
   };
 
-  const toggleFavorite = (productId: number) => {
-    setFavorites(prev =>
-      prev.includes(productId)
-        ? prev.filter(id => id !== productId)
-        : [...prev, productId]
-    );
-  };
-
   const cartItemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
   const cartTotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
@@ -208,203 +205,254 @@ const Products: React.FC = () => {
         return 'bg-emerald-500 text-white';
       case 'new':
         return 'bg-cyan-400 text-white';
-      case 'vegan':
-        return 'bg-white text-emerald-600 border border-emerald-600';
+      case 'trending':
+        return 'bg-pink-500 text-white';
+      case 'premium':
+        return 'bg-purple-600 text-white';
       default:
         return 'bg-gray-200 text-gray-800';
     }
   };
+const sendWhatsAppOrder = () => {
+  if (cart.length === 0) return;
+
+  const phoneNumber = "+919966656775"; 
+
+  let message = `New Order from Swanky Styles\n\n`;
+
+  cart.forEach(item => {
+    message += `• ${item.name} x ${item.quantity} - $${(item.price * item.quantity).toFixed(2)}\n`;
+  });
+
+  message += `\n-\n`;
+  message += `Total: $${cartTotal.toFixed(2)}\n`;
+  message += `-\n\n`;
+  message += `Please confirm the order.`;
+
+  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+  window.open(url, "_blank");
+};
+
+// Celebrity Corner Products
+const celebrityProducts: Product[] = [
+  {
+    id: 201,
+    name: "Celebrity Red Carpet Gown",
+    description: "Signature red-carpet gown inspired by Bollywood divas",
+    price: 499.00,
+    originalPrice: 650.00,
+    image: "https://images.unsplash.com/photo-1551022377-3af35c7c77b4?w=500&h=500&fit=crop",
+    badges: ["Trending", "Best"],
+    category: "Celebrity Look"
+  },
+  {
+    id: 202,
+    name: "Star Embroidered Lehenga",
+    description: "Designer lehenga worn by top movie stars in recent events",
+    price: 999.00,
+    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&h=500&fit=crop",
+    badges: ["Premium"],
+    category: "Celebrity Look"
+  },
+  {
+    id: 203,
+    name: "Celebrity Saree Edit",
+    description: "Elegant saree inspired by celebrity award show outfits",
+    price: 375.00,
+    originalPrice: 450.00,
+    image: "https://images.unsplash.com/photo-1542060748-10c28b62716b?w=500&h=500&fit=crop",
+    badges: ["New"],
+    category: "Celebrity Look"
+  },
+  {
+    id: 204,
+    name: "Iconic Film Look Dress",
+    description: "Recreation of iconic movie costume in premium fabric",
+    price: 225.00,
+    image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=500&h=500&fit=crop",
+    category: "Celebrity Look"
+  }
+];
+
 
   return (
-    <div id="best" className="min-h-screen bg-neutral-50">
-      {/* Best Sellers Section */}
-      <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-neutral-50">
+      {/* New Arrivals Section */}
+      <section className="bg-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="flex justify-between items-end mb-6">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-6 gap-4">
             <div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light mb-4 tracking-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light mb-2 sm:mb-4 tracking-tight">
                 New Arrivals
               </h1>
-              <p className="text-lg text-gray-600">Shop our latest products</p>
+              <p className="text-base sm:text-lg text-gray-600">Discover our latest collection</p>
             </div>
             <button className="text-sm font-medium border-b-2 border-black pb-1 hover:opacity-70 transition-opacity">
               View more
             </button>
           </div>
 
-          {/* Horizontal Scrolling Container - Mobile Only */}
-          <div className="mt-8 overflow-x-auto scrollbar-hide -mx-4 px-4 sm:overflow-visible sm:mx-0 sm:px-0">
-            <div className="flex gap-6 sm:grid sm:grid-cols-2 lg:grid-cols-4">
-              {/* Best Seller Card 1 */}
-              <div className="group cursor-pointer flex-shrink-0 w-72 sm:w-auto">
-                <div className="relative bg-gray-100 aspect-square mb-4 overflow-hidden">
+          {/* Horizontal Scrolling Container - Mobile Optimized */}
+          <div className="mt-6 sm:mt-8 overflow-x-auto scrollbar-hide -mx-4 px-4 sm:overflow-visible sm:mx-0 sm:px-0">
+            <div className="flex gap-4 sm:gap-6 sm:grid sm:grid-cols-2 lg:grid-cols-4">
+              {/* Featured Card 1 */}
+              <div className="group cursor-pointer flex-shrink-0 w-64 sm:w-auto">
+                <div className="relative bg-gray-100 aspect-[3/4] mb-3 sm:mb-4 overflow-hidden ">
                   <img
-                    src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=500&h=500&fit=crop"
-                    alt="Glass Skin Duo Set"
+                    src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500&h=500&fit=crop"
+                    alt="Elegant Silk Saree"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <button 
-                    onClick={() => toggleFavorite(101)}
-                    className={`absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors ${
-                      favorites.includes(101) ? 'text-red-500' : 'text-gray-600'
-                    }`}
+                    onClick={() => setPreviewImage("https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=1200&h=1200&fit=crop")}
+                    className="absolute top-3 sm:top-4 right-3 sm:right-4 w-9 h-9 sm:w-10 sm:h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors shadow-md"
                   >
-                    <Heart className="w-5 h-5" fill={favorites.includes(101) ? 'currentColor' : 'none'} />
+                    <Eye className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700" />
                   </button>
                 </div>
-                <h3 className="font-medium mb-2">Glass Skin Duo Set</h3>
-                <p className="text-sm text-gray-600 mb-3 line-clamp-2">
-                  Two Icons, One Ritual — Glass Skin Duo Unwrap radiant, glass-like skin this festive...
+                <h3 className="font-medium mb-1 sm:mb-2 text-sm sm:text-base">Elegant Silk Saree</h3>
+                <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 line-clamp-2">
+                  Traditional handwoven silk saree with intricate golden border work
                 </p>
                 <div className="flex items-center justify-between">
-                  <p className="font-semibold">$35.00</p>
+                  <p className="font-semibold text-base sm:text-lg">$299.00</p>
                   <button
                     onClick={() => addToCart({
                       id: 101,
-                      name: "Glass Skin Duo Set",
-                      description: "Two Icons, One Ritual — Glass Skin Duo Unwrap radiant, glass-like skin this festive...",
-                      price: 35.00,
-                      image: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=500&h=500&fit=crop",
-                      category: "Sets"
+                      name: "Elegant Silk Saree",
+                      description: "Traditional handwoven silk saree with intricate golden border work",
+                      price: 299.00,
+                      image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500&h=500&fit=crop",
+                      category: "Sarees"
                     })}
-                    className="bg-black text-white px-4 py-1.5 rounded-full hover:bg-gray-800 transition-colors text-sm font-medium"
+                    className="bg-black text-white px-3 sm:px-4 py-1.5  hover:bg-gray-800 transition-colors text-xs sm:text-sm font-medium"
                   >
                     Add
                   </button>
                 </div>
               </div>
 
-              {/* Best Seller Card 2 */}
-              <div className="group cursor-pointer flex-shrink-0 w-72 sm:w-auto">
-                <div className="relative bg-gray-100 aspect-square mb-4 overflow-hidden">
+              {/* Featured Card 2 */}
+              <div className="group cursor-pointer flex-shrink-0 w-64 sm:w-auto">
+                <div className="relative bg-gray-100 aspect-[3/4] mb-3 sm:mb-4 overflow-hidden ">
                   <img
-                    src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=500&h=500&fit=crop"
-                    alt="TXA Brightening Cream"
+                    src="https://images.unsplash.com/photo-1583391733956-6c78276477e6?w=500&h=500&fit=crop"
+                    alt="Designer Bridal Lehenga"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <button 
-                    onClick={() => toggleFavorite(102)}
-                    className={`absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors ${
-                      favorites.includes(102) ? 'text-red-500' : 'text-gray-600'
-                    }`}
+                    onClick={() => setPreviewImage("https://images.unsplash.com/photo-1583391733956-6c78276477e6?w=1200&h=1200&fit=crop")}
+                    className="absolute top-3 sm:top-4 right-3 sm:right-4 w-9 h-9 sm:w-10 sm:h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors shadow-md"
                   >
-                    <Heart className="w-5 h-5" fill={favorites.includes(102) ? 'currentColor' : 'none'} />
+                    <Eye className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700" />
                   </button>
                 </div>
-                <h3 className="font-medium mb-2">TXA 2.5% Intensive Brightening Cream</h3>
-                <p className="text-sm text-gray-600 mb-3 line-clamp-2">
-                  Find your Peace of Glow with our new silicone-free, gentle brightening cream...
+                <h3 className="font-medium mb-1 sm:mb-2 text-sm sm:text-base">Designer Bridal Lehenga</h3>
+                <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 line-clamp-2">
+                  Heavily embroidered bridal lehenga with zari and sequin work
                 </p>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <p className="font-semibold">$19.00</p>
-                    <p className="text-sm text-gray-400 line-through">$24.00</p>
+                    <p className="font-semibold text-base sm:text-lg">$899.00</p>
                   </div>
                   <button
                     onClick={() => addToCart({
                       id: 102,
-                      name: "TXA 2.5% Intensive Brightening Cream",
-                      description: "Find your Peace of Glow with our new silicone-free, gentle brightening cream...",
-                      price: 19.00,
-                      originalPrice: 24.00,
-                      image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=500&h=500&fit=crop",
-                      category: "Moisturizer"
+                      name: "Designer Bridal Lehenga",
+                      description: "Heavily embroidered bridal lehenga with zari and sequin work",
+                      price: 899.00,
+                      image: "https://images.unsplash.com/photo-1583391733956-6c78276477e6?w=500&h=500&fit=crop",
+                      category: "Lehengas"
                     })}
-                    className="bg-black text-white px-4 py-1.5 rounded-full hover:bg-gray-800 transition-colors text-sm font-medium"
+                    className="bg-black text-white px-3 sm:px-4 py-1.5  hover:bg-gray-800 transition-colors text-xs sm:text-sm font-medium"
                   >
                     Add
                   </button>
                 </div>
               </div>
 
-              {/* Best Seller Card 3 */}
-              <div className="group cursor-pointer flex-shrink-0 w-72 sm:w-auto">
-                <div className="relative bg-gray-100 aspect-square mb-4 overflow-hidden">
+              {/* Featured Card 3 */}
+              <div className="group cursor-pointer flex-shrink-0 w-64 sm:w-auto">
+                <div className="relative bg-gray-100 aspect-[3/4] mb-3 sm:mb-4 overflow-hidden ">
                   <img
-                    src="https://images.unsplash.com/photo-1571875257727-256c39da42af?w=500&h=500&fit=crop"
-                    alt="Lip & Eye Set"
+                    src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&h=500&fit=crop"
+                    alt="Floral Summer Dress"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <button 
-                    onClick={() => toggleFavorite(103)}
-                    className={`absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors ${
-                      favorites.includes(103) ? 'text-red-500' : 'text-gray-600'
-                    }`}
+                    onClick={() => setPreviewImage("https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=1200&h=1200&fit=crop")}
+                    className="absolute top-3 sm:top-4 right-3 sm:right-4 w-9 h-9 sm:w-10 sm:h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors shadow-md"
                   >
-                    <Heart className="w-5 h-5" fill={favorites.includes(103) ? 'currentColor' : 'none'} />
+                    <Eye className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700" />
                   </button>
                 </div>
-                <h3 className="font-medium mb-2">Lip & Eye Set</h3>
-                <p className="text-sm text-gray-600 mb-3 line-clamp-2">
-                  Lip and Eye Set Glow meets care in every detail. Complete your self-care ritual with th...
+                <h3 className="font-medium mb-1 sm:mb-2 text-sm sm:text-base">Floral Summer Dress</h3>
+                <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 line-clamp-2">
+                  Lightweight cotton dress with beautiful floral prints perfect for summer
                 </p>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <p className="font-semibold">$28.00</p>
-                    <p className="text-sm text-gray-400 line-through">$40.00</p>
+                    <p className="font-semibold text-base sm:text-lg">$89.00</p>
+                    <p className="text-xs sm:text-sm text-gray-400 line-through">$120.00</p>
                   </div>
                   <button
                     onClick={() => addToCart({
                       id: 103,
-                      name: "Lip & Eye Set",
-                      description: "Lip and Eye Set Glow meets care in every detail. Complete your self-care ritual with th...",
-                      price: 28.00,
-                      originalPrice: 40.00,
-                      image: "https://images.unsplash.com/photo-1571875257727-256c39da42af?w=500&h=500&fit=crop",
-                      category: "Sets"
+                      name: "Floral Summer Dress",
+                      description: "Lightweight cotton dress with beautiful floral prints perfect for summer",
+                      price: 89.00,
+                      originalPrice: 120.00,
+                      image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&h=500&fit=crop",
+                      category: "Dresses"
                     })}
-                    className="bg-black text-white px-4 py-1.5 rounded-full hover:bg-gray-800 transition-colors text-sm font-medium"
+                    className="bg-black text-white px-3 sm:px-4 py-1.5  hover:bg-gray-800 transition-colors text-xs sm:text-sm font-medium"
                   >
                     Add
                   </button>
                 </div>
               </div>
 
-              {/* Best Seller Card 4 */}
-              <div className="group cursor-pointer flex-shrink-0 w-72 sm:w-auto">
-                <div className="relative bg-gray-100 aspect-square mb-4 overflow-hidden">
+              {/* Featured Card 4 */}
+              <div className="group cursor-pointer flex-shrink-0 w-64 sm:w-auto">
+                <div className="relative bg-gray-100 aspect-[3/4] mb-3 sm:mb-4 overflow-hidden ">
                   <img
-                    src="https://images.unsplash.com/photo-1515688594390-b649af70d282?w=500&h=500&fit=crop"
-                    alt="Vita Glow Lip Oil"
+                    src="https://images.unsplash.com/photo-1598831541649-05e8248b5a5f?w=500&h=500&fit=crop"
+                    alt="Pastel Party Lehenga"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute top-4 left-4 flex gap-2 flex-wrap">
-                    <span className="bg-emerald-500 text-white text-xs px-3 py-1 rounded">Best</span>
-                    <span className="bg-cyan-400 text-white text-xs px-3 py-1 rounded">New</span>
-                    <span className="bg-white text-emerald-600 border border-emerald-600 text-xs px-3 py-1 rounded">
-                      Vegan
-                    </span>
+                  <div className="absolute top-3 sm:top-4 left-3 sm:left-4 flex gap-2 flex-wrap">
+                    <span className="bg-emerald-500 text-white text-xs px-2 sm:px-3 py-1 rounded shadow-sm">Best</span>
+                    <span className="bg-cyan-400 text-white text-xs px-2 sm:px-3 py-1 rounded shadow-sm">New</span>
                   </div>
                   <button 
-                    onClick={() => toggleFavorite(104)}
-                    className={`absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors ${
-                      favorites.includes(104) ? 'text-red-500' : 'text-gray-600'
-                    }`}
+                    onClick={() => setPreviewImage("https://images.unsplash.com/photo-1598831541649-05e8248b5a5f?w=1200&h=1200&fit=crop")}
+                    className="absolute top-3 sm:top-4 right-3 sm:right-4 w-9 h-9 sm:w-10 sm:h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors shadow-md"
                   >
-                    <Heart className="w-5 h-5" fill={favorites.includes(104) ? 'currentColor' : 'none'} />
+                    <Eye className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700" />
                   </button>
                 </div>
-                <h3 className="font-medium mb-2">Vita Glow Lip Oil - Dreamy Olive 4.5g</h3>
-                <p className="text-sm text-gray-600 mb-3 line-clamp-2">
-                  Dreamy Olive - Sheer hydration with a dewy, natural glow. Meet the final step in your...
+                <h3 className="font-medium mb-1 sm:mb-2 text-sm sm:text-base">Pastel Party Lehenga</h3>
+                <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 line-clamp-2">
+                  Contemporary lehenga in soft pastel shades with mirror work details
                 </p>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <p className="font-semibold">$15.00</p>
-                    <p className="text-sm text-gray-400 line-through">$20.00</p>
+                    <p className="font-semibold text-base sm:text-lg">$650.00</p>
+                    <p className="text-xs sm:text-sm text-gray-400 line-through">$800.00</p>
                   </div>
                   <button
                     onClick={() => addToCart({
                       id: 104,
-                      name: "Vita Glow Lip Oil - Dreamy Olive 4.5g",
-                      description: "Dreamy Olive - Sheer hydration with a dewy, natural glow. Meet the final step in your...",
-                      price: 15.00,
-                      originalPrice: 20.00,
-                      image: "https://images.unsplash.com/photo-1515688594390-b649af70d282?w=500&h=500&fit=crop",
-                      badges: ["Best", "New", "Vegan"],
-                      category: "Lip Care"
+                      name: "Pastel Party Lehenga",
+                      description: "Contemporary lehenga in soft pastel shades with mirror work details",
+                      price: 650.00,
+                      originalPrice: 800.00,
+                      image: "https://images.unsplash.com/photo-1598831541649-05e8248b5a5f?w=500&h=500&fit=crop",
+                      badges: ["Best", "New"],
+                      category: "Lehengas"
                     })}
-                    className="bg-black text-white px-4 py-1.5 rounded-full hover:bg-gray-800 transition-colors text-sm font-medium"
+                    className="bg-black text-white px-3 sm:px-4 py-1.5  hover:bg-gray-800 transition-colors text-xs sm:text-sm font-medium"
                   >
                     Add
                   </button>
@@ -426,35 +474,27 @@ const Products: React.FC = () => {
       `}</style>
 
       {/* Products Section */}
-      <section id="Products" className="py-16 px-4 sm:px-6 lg:px-8">
+      <section id="Products" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="flex justify-between items-center mb-8">
-            <h2 className="text-3xl sm:text-4xl font-light tracking-tight">All Products</h2>
-            {!showAll && products.length > 6 && (
-              <button
-                onClick={() => setShowAll(true)}
-                className="text-sm font-medium border-b-2 border-black pb-1 hover:opacity-70 transition-opacity"
-              >
-                View more
-              </button>
-            )}
+          <div className="mb-6 sm:mb-8">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light tracking-tight">Best Sellers</h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
             {displayedProducts.map(product => (
-              <div key={product.id} className="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                <div className="relative aspect-square overflow-hidden bg-gray-100">
+              <div key={product.id} className="group bg-white  overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+                <div className="relative aspect-[3/4] overflow-hidden bg-gray-100 ">
                   <img
                     src={product.image}
                     alt={product.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   {product.badges && product.badges.length > 0 && (
-                    <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+                    <div className="absolute top-2 left-2 sm:top-3 sm:left-3 flex flex-wrap gap-1 sm:gap-2">
                       {product.badges.map(badge => (
                         <span
                           key={badge}
-                          className={`text-xs px-3 py-1 rounded font-medium ${getBadgeColor(badge)}`}
+                          className={`text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded font-medium shadow-sm ${getBadgeColor(badge)}`}
                         >
                           {badge}
                         </span>
@@ -462,41 +502,36 @@ const Products: React.FC = () => {
                     </div>
                   )}
                   <button
-                    onClick={() => toggleFavorite(product.id)}
-                    className={`absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors ${
-                      favorites.includes(product.id) ? 'text-red-500' : 'text-gray-600'
-                    }`}
+                    onClick={() => setPreviewImage(product.image.replace('w=500&h=500', 'w=1200&h=1200'))}
+                    className="absolute top-2 right-2 sm:top-3 sm:right-3 w-8 h-8 sm:w-9 sm:h-9 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors shadow-md"
                   >
-                    <Heart
-                      className="w-5 h-5"
-                      fill={favorites.includes(product.id) ? 'currentColor' : 'none'}
-                    />
+                    <Eye className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-700" />
                   </button>
                 </div>
 
-                <div className="p-6">
-                  <p className="text-xs text-gray-500 mb-2 uppercase tracking-wide">
+                <div className="p-2 sm:p-3 lg:p-4">
+                  <p className="text-[10px] sm:text-xs text-gray-500 mb-0.5 sm:mb-1 uppercase tracking-wide">
                     {product.category}
                   </p>
-                  <h3 className="font-semibold text-lg mb-2 line-clamp-2">{product.name}</h3>
-                  <p className="text-sm text-gray-600 mb-4 line-clamp-2">
+                  <h3 className="font-semibold text-xs sm:text-sm lg:text-base mb-1 line-clamp-2">{product.name}</h3>
+                  <p className="text-[10px] sm:text-xs text-gray-600 mb-2 sm:mb-3 line-clamp-2">
                     {product.description}
                   </p>
 
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <span className="text-xl font-bold">${product.price.toFixed(2)}</span>
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1.5 sm:gap-2">
+                    <div className="flex items-center gap-1 sm:gap-2 flex-wrap">
+                      <span className="text-sm sm:text-base lg:text-lg font-bold">${product.price.toFixed(2)}</span>
                       {product.originalPrice && (
-                        <span className="text-sm text-gray-400 line-through">
+                        <span className="text-[10px] sm:text-xs text-gray-400 line-through">
                           ${product.originalPrice.toFixed(2)}
                         </span>
                       )}
                     </div>
                     <button
                       onClick={() => addToCart(product)}
-                      className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition-colors text-sm font-medium"
+                      className="bg-black text-white px-2.5 sm:px-3 lg:px-4 py-1 sm:py-1.5  hover:bg-gray-800 transition-colors text-[10px] sm:text-xs font-medium whitespace-nowrap w-full sm:w-auto"
                     >
-                      Add to Cart
+                      Add
                     </button>
                   </div>
                 </div>
@@ -504,31 +539,136 @@ const Products: React.FC = () => {
             ))}
           </div>
 
-          {showAll && (
-            <div className="mt-8 text-center">
+          {hasMoreProducts && (
+            <div className="mt-8 sm:mt-12 text-center">
               <button
-                onClick={() => setShowAll(false)}
-                className="text-sm font-medium border-b-2 border-black pb-1 hover:opacity-70 transition-opacity"
+                onClick={loadMoreProducts}
+                className="inline-flex items-center justify-center bg-black text-white px-8 sm:px-10 py-3 sm:py-4  hover:bg-gray-800 transition-all text-sm sm:text-base font-medium shadow-md hover:shadow-lg"
               >
-                Show less
+                View More Products
               </button>
             </div>
           )}
         </div>
       </section>
 
+      {/* Image Preview Modal */}
+      {previewImage && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-90" onClick={() => setPreviewImage(null)}>
+          <button
+            onClick={() => setPreviewImage(null)}
+            className="absolute top-4 right-4 w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors shadow-lg z-10"
+          >
+            <X className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700" />
+          </button>
+          <div className="max-w-4xl max-h-[90vh] w-full">
+            <img
+              src={previewImage}
+              alt="Product preview"
+              className="w-full h-full object-contain rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        </div>
+      )}
+
       {/* Floating Cart Button */}
       {cartItemCount > 0 && (
         <button
           onClick={() => setShowCart(!showCart)}
-          className="fixed bottom-8 right-8 bg-black text-white w-16 h-16 rounded-full shadow-2xl hover:bg-gray-800 transition-all flex items-center justify-center group z-50"
+          className="fixed bottom-6 sm:bottom-8 right-6 sm:right-8 bg-black text-white w-14 h-14 sm:w-16 sm:h-16 rounded-full shadow-2xl hover:bg-gray-800 transition-all flex items-center justify-center group z-50"
         >
-          <ShoppingBag className="w-6 h-6" />
+          <ShoppingBag className="w-5 h-5 sm:w-6 sm:h-6" />
           <span className="absolute -top-2 -right-2 bg-emerald-500 text-white text-xs w-6 h-6 rounded-full flex items-center justify-center font-bold">
             {cartItemCount}
           </span>
         </button>
       )}
+
+{/* Celebrity Corner Section */}
+<section id="CelebrityCorner" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+  <div className="max-w-7xl mx-auto">
+    
+    <div className="mb-6 sm:mb-8">
+      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light tracking-tight">
+        Celebrity Corner
+      </h2>
+      <p className="text-gray-600 text-sm sm:text-base mt-1">
+        Shop outfits inspired by celebrities
+      </p>
+    </div>
+
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
+      {celebrityProducts.map(product => (
+        <div key={product.id} className="group bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+          <div className="relative aspect-[3/4] overflow-hidden bg-gray-100">
+            <img
+              src={product.image}
+              alt={product.name}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+
+            {product.badges && (
+              <div className="absolute top-2 left-2 flex gap-1 flex-wrap">
+                {product.badges.map(badge => (
+                  <span
+                    key={badge}
+                    className={`text-[10px] sm:text-xs px-1.5 py-0.5 rounded shadow-sm ${getBadgeColor(badge)}`}
+                  >
+                    {badge}
+                  </span>
+                ))}
+              </div>
+            )}
+
+            <button
+              onClick={() =>
+                setPreviewImage(product.image.replace("w=500&h=500", "w=1200&h=1200"))
+              }
+              className="absolute top-2 right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-gray-100"
+            >
+              <Eye className="w-4 h-4 text-gray-700" />
+            </button>
+          </div>
+
+          <div className="p-2 sm:p-3 lg:p-4">
+            <p className="text-[10px] sm:text-xs text-gray-500 uppercase tracking-wide mb-1">
+              {product.category}
+            </p>
+            <h3 className="font-semibold text-xs sm:text-sm lg:text-base line-clamp-2">
+              {product.name}
+            </h3>
+            <p className="text-[10px] sm:text-xs text-gray-600 mb-2 line-clamp-2">
+              {product.description}
+            </p>
+
+            <div className="flex justify-between items-center">
+              <div className="flex items-center gap-1">
+                <span className="font-bold text-sm sm:text-base">
+                  ${product.price.toFixed(2)}
+                </span>
+                {product.originalPrice && (
+                  <span className="line-through text-gray-400 text-[10px] sm:text-xs">
+                    ${product.originalPrice.toFixed(2)}
+                  </span>
+                )}
+              </div>
+
+              <button
+                onClick={() => addToCart(product)}
+                className="bg-black text-white px-3 py-1 text-[10px] sm:text-xs hover:bg-gray-800 transition"
+              >
+                Add
+              </button>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
 
       {/* Cart Sidebar */}
       {showCart && (
@@ -538,63 +678,65 @@ const Products: React.FC = () => {
             onClick={() => setShowCart(false)}
           ></div>
           <div className="absolute right-0 top-0 h-full w-full sm:w-96 bg-white shadow-2xl flex flex-col">
-            <div className="p-6 border-b">
+            <div className="p-4 sm:p-6 border-b">
               <div className="flex items-center justify-between">
-                <h2 className="text-2xl font-semibold">Shopping Cart</h2>
+                <h2 className="text-xl sm:text-2xl font-semibold">Shopping Cart</h2>
                 <button
                   onClick={() => setShowCart(false)}
                   className="text-gray-500 hover:text-gray-700"
                 >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
+                  <X className="w-6 h-6" />
                 </button>
               </div>
               <p className="text-sm text-gray-600 mt-1">{cartItemCount} items</p>
             </div>
 
-            <div className="flex-1 overflow-y-auto p-6">
+            <div className="flex-1 overflow-y-auto p-4 sm:p-6">
               {cart.map(item => (
-                <div key={item.id} className="flex gap-4 mb-6 pb-6 border-b">
+                <div key={item.id} className="flex gap-3 sm:gap-4 mb-4 sm:mb-6 pb-4 sm:pb-6 border-b">
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-20 h-20 object-cover rounded"
+                    className="w-16 h-20 sm:w-20 sm:h-24 object-cover rounded"
                   />
-                  <div className="flex-1">
-                    <h3 className="font-medium text-sm mb-1 line-clamp-2">{item.name}</h3>
-                    <p className="text-sm text-gray-600 mb-2">${item.price.toFixed(2)}</p>
-                    <div className="flex items-center gap-3">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-medium text-xs sm:text-sm mb-1 line-clamp-2">{item.name}</h3>
+                    <p className="text-xs sm:text-sm text-gray-600 mb-2">${item.price.toFixed(2)}</p>
+                    <div className="flex items-center gap-2 sm:gap-3">
                       <button
                         onClick={() => removeFromCart(item.id)}
-                        className="w-7 h-7 border rounded flex items-center justify-center hover:bg-gray-100"
+                        className="w-6 h-6 sm:w-7 sm:h-7 border rounded flex items-center justify-center hover:bg-gray-100"
                       >
-                        <Minus className="w-4 h-4" />
+                        <Minus className="w-3 h-3 sm:w-4 sm:h-4" />
                       </button>
-                      <span className="text-sm font-medium">{item.quantity}</span>
+                      <span className="text-xs sm:text-sm font-medium min-w-[20px] text-center">{item.quantity}</span>
                       <button
                         onClick={() => addToCart(item)}
-                        className="w-7 h-7 border rounded flex items-center justify-center hover:bg-gray-100"
+                        className="w-6 h-6 sm:w-7 sm:h-7 border rounded flex items-center justify-center hover:bg-gray-100"
                       >
-                        <Plus className="w-4 h-4" />
+                        <Plus className="w-3 h-3 sm:w-4 sm:h-4" />
                       </button>
                     </div>
                   </div>
                   <div className="text-right">
-                    <p className="font-semibold">${(item.price * item.quantity).toFixed(2)}</p>
+                    <p className="font-semibold text-sm sm:text-base">${(item.price * item.quantity).toFixed(2)}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="p-6 border-t bg-gray-50">
-              <div className="flex justify-between items-center mb-4">
-                <span className="text-lg font-semibold">Total</span>
-                <span className="text-2xl font-bold">${cartTotal.toFixed(2)}</span>
+            <div className="p-4 sm:p-6 border-t bg-gray-50">
+              <div className="flex justify-between items-center mb-3 sm:mb-4">
+                <span className="text-base sm:text-lg font-semibold">Total</span>
+                <span className="text-xl sm:text-2xl font-bold">${cartTotal.toFixed(2)}</span>
               </div>
-              <button className="w-full bg-black text-white py-4 rounded-full hover:bg-gray-800 transition-colors font-medium">
-                Checkout
-              </button>
+              <button
+  onClick={sendWhatsAppOrder}
+  className="w-full bg-black text-white py-3 sm:py-4  hover:bg-gray-800 transition-colors font-medium text-sm sm:text-base"
+>
+  Checkout via WhatsApp
+</button>
+
             </div>
           </div>
         </div>
@@ -603,4 +745,4 @@ const Products: React.FC = () => {
   );
 };
 
-export default Products;
+export default Index;
