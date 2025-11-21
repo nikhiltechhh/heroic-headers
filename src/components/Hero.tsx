@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Palette, Zap, Truck } from 'lucide-react';
-import Hero1 from '@/assets/Hero1.png';
+import Hero1 from '@/assets/Hero11.png';
+import Hero2 from '@/assets/Hero22.png';
+import Hero3 from '@/assets/Hero33.png';
+
 
 interface Slide {
   id: number;
@@ -26,7 +29,7 @@ const Hero = () => {
       title: 'TRADITION',
       subtitle: 'MEETS ELEGANCE',
       tagline: 'Discover Craftsmanship',
-      image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=1200&h=600&fit=crop',
+      image: Hero2,
       bgGradient: 'linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%)',
     },
     {
@@ -34,7 +37,7 @@ const Hero = () => {
       title: 'EXQUISITE',
       subtitle: 'COLLECTIONS',
       tagline: 'Experience Luxury',
-      image: 'https://images.unsplash.com/photo-1580162082835-d4f5f2a4e46d?w=1200&h=600&fit=crop',
+      image: Hero3,
       bgGradient: 'linear-gradient(135deg, #2d5016 0%, #5a8f3a 100%)',
     },
   ];
@@ -113,11 +116,11 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-gray-300 to-gray-200 animate-pulse" />
             )}
             {/* Dark Overlay */}
-            <div className="absolute inset-0 bg-black/40" />
+            <div className="absolute inset-0 bg-black/20" />
           </div>
 
           {/* Text Content - Center */}
-          <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 sm:px-6 md:px-8 text-center">
+          {/* <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 sm:px-6 md:px-8 text-center">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-white mb-2 md:mb-4 tracking-widest drop-shadow-lg">
               {slide.title}
             </h2>
@@ -128,7 +131,7 @@ const Hero = () => {
             <p className="text-white font-light italic text-xs sm:text-sm md:text-base lg:text-lg tracking-wide drop-shadow">
               {slide.tagline}
             </p>
-          </div>
+          </div> */}
 
           {/* Left Arrow Button */}
           <button
@@ -167,31 +170,33 @@ const Hero = () => {
       </div>
 
       {/* Features Section */}
-      <div className="bg-gradient-to-b from-white to-gray-50 border-t ">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 py-6 md:py-10">
-            {features.map((feature, index) => {
-              const Icon = feature.icon;
-              return (
-                <div
-                  key={index}
-                  className="group flex flex-col items-center text-center p-4 bg-white border border-transparent transition-all duration-300 hover:scale-105"
-                >
-                  <div className="mb-3 p-2.5  transition-colors duration-300">
-                    <Icon className="w-6 h-6 md:w-7 md:h-7 text-indigo-600 group-hover:text-indigo-700 transition-colors" />
-                  </div>
-                  <h3 className="text-sm md:text-base font-semibold text-gray-900 mb-1.5 line-clamp-2">
+      <div className="bg-gradient-to-b from-white to-gray-50 border-t">
+      <div className="max-w-4xl mx-auto px-4">
+        <div className="flex flex-col sm:flex-row sm:justify-between gap-2 py-3">
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
+            return (
+              <div
+                key={index}
+                className="group flex items-center gap-2 p-2 bg-white hover:bg-gray-50 transition-colors duration-200"
+              >
+                <div className="p-1.5  rounded transition-colors">
+                  <Icon className="w-5 h-5 text-[#164f14]" />
+                </div>
+                <div>
+                  <h3 className="text-s font-semibold text-gray-900">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600 text-xs md:text-sm leading-relaxed">
+                  <p className="text-gray-500 text-[12px] leading-tight">
                     {feature.description}
                   </p>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
         </div>
       </div>
+    </div>
     </div>
   );
 };

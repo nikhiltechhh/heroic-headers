@@ -1,6 +1,7 @@
 // Header.tsx
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Search, User, Heart, ShoppingCart, X } from 'lucide-react';
+import Logoo from '@/assets/Logom.png';
 
 // Continuous Scrolling Promo Banner
 const PromoBanner = () => {
@@ -10,7 +11,6 @@ const PromoBanner = () => {
     { icon: '⚡', text: 'Use "Swanky Styles" for 10% Off on Orders above 60k' },
   ];
 
-  // Duplicate promos for continuous scroll effect
   const extendedPromos = [...promos, ...promos, ...promos];
 
   return (
@@ -57,28 +57,31 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Top Row */}
           <div className="flex items-center justify-between h-16">
+            
             {/* Left - Call Us */}
             <div className="hidden lg:block text-sm font-medium text-gray-800 flex-1">
               Call Us: <span className="font-bold">99666 56775</span>
             </div>
 
-            {/* Logo - Center */}
-<div className="flex items-center gap-3">
-  <img
-    src="https://i.ibb.co/DDxzqkTG/swankystyles.png"
-    alt="Logo"
-    className="w-16 h-16 object-contain"
-  />
+            {/* Logo + Title */}
+            <div className="flex items-center gap-3">
+              <div className="w-16 h-16 rounded-full overflow-hidden">
+                <img
+                  src={Logoo}
+                  alt="Logo"
+                  className="w-full h-full object-cover scale-[1.65]"
+                />
+              </div>
 
-  <p className="text-sm text-gray-700 tracking-wide font-medium">
-    Swanky Styles
-  </p>
-</div>
+             <p className="text-sm tracking-wide font-semibold text-[#D4AF37]">
+  SWANKY STYLES
+</p>
 
+            </div>
 
-            {/* Right - Search & Icons */}
+            {/* Right - Icons */}
             <div className="flex items-center gap-3 sm:gap-6 flex-1 justify-end">
-              {/* Search - Hidden on mobile */}
+              {/* Search (Desktop Only) */}
               <div className="hidden lg:flex items-center border-b border-gray-300 hover:border-gray-800 transition">
                 <input
                   type="text"
@@ -92,9 +95,11 @@ const Header = () => {
               <button className="p-1 hover:bg-gray-100 rounded transition">
                 <User size={20} className="text-gray-600 hover:text-gray-900" />
               </button>
+
               <button className="p-1 hover:bg-gray-100 rounded transition">
                 <Heart size={20} className="text-gray-600 hover:text-gray-900" />
               </button>
+
               <button className="p-1 hover:bg-gray-100 rounded transition relative">
                 <ShoppingCart size={20} className="text-gray-600 hover:text-gray-900" />
                 <span className="absolute -top-1 -right-1 bg-gray-900 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium">
@@ -102,7 +107,7 @@ const Header = () => {
                 </span>
               </button>
 
-              {/* Mobile Menu Toggle */}
+              {/* Mobile Menu Button */}
               <button
                 className="md:hidden p-1 hover:bg-gray-100 rounded transition"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -118,16 +123,16 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Navigation - Desktop */}
-          <nav className="hidden md:flex items-center justify-center h-16 text-sm font-medium tracking-wide gap-8">
+          {/* Desktop Navigation (BOLD ADDED) */}
+          <nav className="hidden md:flex items-center justify-center h-16 text-sm font-bold tracking-wide gap-8">
             {navItems.map((item) => (
               <a
                 key={item}
                 href="#"
                 className={`transition duration-300 pb-2 border-b-2 border-transparent ${
                   item === 'SHOP BY'
-                    ? 'text-red-500 border-b-2 border-red-500'
-                    : 'text-gray-800 hover:text-red-500 hover:border-b-2 hover:border-red-500'
+                    ? 'text-red-600 border-red-600'
+                    : 'text-gray-800 hover:text-red-600 hover:border-red-600'
                 }`}
               >
                 {item}
@@ -149,15 +154,16 @@ const Header = () => {
               <a
                 key={item}
                 href="#"
-                className={`block py-2 px-4 rounded transition duration-300 ${
+                className={`block py-2 px-4 rounded transition duration-300 font-bold ${
                   item === 'SHOP BY'
-                    ? 'text-red-500 bg-red-50 font-medium'
+                    ? 'text-red-600 bg-red-50'
                     : 'text-gray-800 hover:bg-gray-200'
                 }`}
               >
                 {item}
               </a>
             ))}
+
             {/* Mobile Search */}
             <div className="flex items-center border border-gray-300 rounded px-3 py-2 mt-4">
               <input
