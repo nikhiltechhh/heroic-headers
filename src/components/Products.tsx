@@ -25,10 +25,17 @@ import Pic23 from '@/assets/Picture23.png';
 import Pic24 from '@/assets/Picture24.png';
 import Pic25 from '@/assets/Picture25.png';
 import Pic26 from '@/assets/Picture26.png';
+import Pic11 from '@/assets/Picture11.png';
+import Pic12 from '@/assets/Picture12.png';
 import Pic27 from '@/assets/Picture27.png';
-import Pic28 from '@/assets/Picture28.png';
+import Pic28 from '@/assets/celeb1.jpeg';
+import Pic29 from '@/assets/Picture29.png';
 import Pic30 from '@/assets/Picture30.png';
 import Pic31 from '@/assets/Picture31.png';
+import Pic32 from '@/assets/Picture32.png';
+import Pic33 from '@/assets/Picture33.png';
+import Pic34 from '@/assets/Picture34.png';
+import celeb2 from '@/assets/celeb2.jpeg';
 
 
 const formatPrice = (price: number) => {
@@ -49,222 +56,231 @@ category: string;
 }
 
 const products: Product[] = [
+
 {
 id: 1,
-name: "Elegant Silk Saree",
-description: "Traditional handwoven silk saree with intricate golden border work",
-price: 2999,
-originalPrice: 3999,
-image: Pic1,
-badges: ["New"],
+name: "Heritage Harika Half Sarees",
+description: "Where traditional weaving meets youthful styling — perfect for pellikuthuru, festivities, and cultural events.",
+price: 3499,
+originalPrice: 4299,
+image: Pic22,
+badges: ["Trending"],
 category: "Sarees"
 },
 {
 id: 2,
-name: "Designer Bridal Lehenga",
-description: "Heavily embroidered bridal lehenga with zari and sequin work",
+name: "Dreamweaver Divas Line Saree",
+description: "For bold, experimental fashion.",
+price: 1999,
+image: Pic23,
+category: "Sarees"
+},
+{
+id: 3,
+name: "Heritage Harika Half Sarees",
+description: "Where traditional weaving meets youthful styling — perfect for pellikuthuru, festivities, and cultural events.",
+price: 3499,
+image: Pic24,
+badges: ["Best"],
+category: "Sarees"
+},
+{
+id: 4,
+name: "Elegant Organza Saree with Mirror Work & Ruffled Blouse ",
+description: "The lightweight fabric drapes effortlessly, making it a timeless choice for weddings, festive occasions, and parties.",
+price: 7999,
+image: Pic25,
+badges: ["Best"],
+category: "Sarees"
+},
+{
+id: 22,
+name: "Blue Royale Heritage Anarkali",
+description: "A classic sapphire spin with modern charm",
+price: 2999,
+originalPrice: 3999,
+image: Pic1,
+badges: ["New"],
+category: "Dress"
+},
+{
+id: 23,
+name: "Modern Mehfil Dresses",
+description: "Fusion dresses that blend Western ease with Indian glam — perfect for brunch to baarat.",
 price: 7999,
 image:Pic2,
 badges: ["Best"],
 category: "Lehengas"
 },
 {
-id: 3,
-name: "Floral Summer Dress",
-description: "Lightweight cotton dress with beautiful floral prints perfect for summer",
-price: 3499,
-originalPrice: 4599,
+id: 24,
+name: "Whispers of Silk",
+description: "Party-ready dresses with shimmer, movement, and main-character energy",
+price: 8999,
+originalPrice: 10999,
 image: Pic3,
 badges: ["Best", "New"],
 category: "Dresses"
 },
 {
-id: 4,
-name: "Banarasi Silk Saree",
-description: "Pure Banarasi silk with traditional brocade patterns and rich pallu",
+id: 25,
+name: "Mehendi Meadow Muse – Festive Green Dress",
+description: "Green vibes, good times. Mehendi magic in every twirl",
 price: 7999,
 image: Pic4,
-category: "Sarees"
+category: "Dresses"
 },
 {
 id: 5,
-name: "Pastel Party Lehenga",
-description: "Contemporary lehenga in soft pastel shades with mirror work details",
-price: 8999,
-originalPrice: 9999,
+name: "Mehendi Moonlit Magic Dress",
+description: "Easy, breezy, and radiant — exactly how haldi mornings should feel.",
+price: 7999,
+originalPrice: 8999,
 image: Pic5,
 badges: ["Trending"],
-category: "Lehengas"
+category: "Dresses"
 },
 {
 id: 6,
-name: "Maxi Evening Dress",
-description: "Elegant floor-length evening dress with sequin embellishments",
-price: 9999,
+name: "Haldi Honey Radiance Dress",
+description: "A sunshine-yellow haldi dress designed to glow in photographs and ceremonies alike",
+price: 6999,
 image: Pic6,
 badges: ["Best"],
 category: "Dresses"
 },
 {
 id: 7,
-name: "Casual Cotton Kurti",
-description: "Comfortable cotton kurti with minimal embroidered neck design",
-price: 13999,
+name: "Blue Royale Heritage Anarkali",
+description: "A classic sapphire spin with modern charm",
+price: 2999,
 image: Pic7,
-category: "Kurtis"
+category: "Dresses"
 },
 {
 id: 8,
-name: "Premium Linen Saree",
-description: "Soft linen saree with elegant woven border and pastel shade",
-price: 3499,
-originalPrice: 14999,
+name: "Stardust Spin Collection",
+description: "Flowy silhouettes designed to feel like poetry on skin.",
+price: 2999,
+originalPrice: 3999,
 image: Pic8,
 badges: ["New"],
-category: "Sarees"
+category: "Dresses"
 },
 {
 id: 9,
-name: "Wedding Designer Gown",
-description: "Full-length gown with shimmer fabric and detailed embroidery",
-price: 3499,
+name: "Eternal Elegance Edit",
+description: "Classic, modest, effortlessly pretty — dresses that never go out of style.",
+price: 4999,
 image: Pic9,
 badges: ["Best"],
 category: "Dresses"
 },
 {
 id: 10,
-name: "Traditional Kanjeevaram Saree",
-description: "Handwoven Kanjeevaram with vibrant colors and gold zari",
-price: 3499,
+name: "Modern Mehfil Dresses",
+description: "Flowy silhouettes designed to feel like poetry on skin.",
+price: 2999,
 image: Pic10,
-category: "Sarees"
+category: "Dresses"
 },
 {
 id: 11,
-name: "Chikankari Anarkali Suit",
-description: "Classic Anarkali with fine Lucknowi chikankari work",
-price: 299.00,
-originalPrice: 350.00,
-image: Pic25,
+name: "Moonbeam Melody Dress",
+description: "Made for moments worth remembering",
+price: 3499,
+originalPrice: 3999,
+image: Pic11,
 badges: ["Trending"],
-category: "Suits"
+category: "Dresses"
 },
 {
 id: 12,
-name: "Velvet Bridal Lehenga",
-description: "Opulent velvet lehenga with heavy zari and bead embroidery",
-price: 1100.00,
-image: Pic26,
+name: "Coral Couture Kurti",
+description: "Fit so dreamy it needs background music",
+price: 1599,
+image: Pic12,
 badges: ["Best"],
-category: "Lehengas"
+category: "Dresses"
 },
 {
 id: 13,
-name: "Printed Georgette Saree",
-description: "Lightweight georgette saree with modern digital print",
-price: 7999,
+name: "Orchid Opera Gown",
+description: "Made for moments worth remembering",
+price: 3499,
 image: Pic13,
 category: "Sarees"
 },
 {
 id: 14,
-name: "Casual Summer Frock",
-description: "Breathable summer frock with floral pastel colors",
-price: 7999,
+name: "Premiere Royale Series",
+description: "Elegant gowns and powerful silhouettes crafted for red carpets and award nights.",
+price: 13999,
 image: Pic14,
 badges: ["New"],
 category: "Dresses"
 },
 {
 id: 15,
-name: "Party Wear Sharara Set",
-description: "Trendy sharara with mirror and gota patti detailing",
-price: 6999,
+name: "Red Velvet Birthday Edit",
+description: "Same rhythm. Same vibe. Same Swanky elegance. 💃🔥",
+price: 12999,
 image: Pic15,
-category: "Suits"
-},
-{
-id: 16,
-name: "Designer Net Saree",
-description: "Stylish net saree with sequined border work",
-price: 1999,
-originalPrice: 2999,
-image: Pic16,
-badges: ["Trending"],
-category: "Sarees"
-},
-{
-id: 17,
-name: "Boho Maxi Dress",
-description: "Bohemian-style maxi dress with free-flowing silhouette",
-price: 140.00,
-image: Pic17,
-badges: ["Best"],
 category: "Dresses"
 },
 {
-id: 18,
-name: "Traditional Pattu Saree",
-description: "Rich pattu saree featuring pure silk and contrast blouse",
+id: 16,
+name: "Premiere Royale Series",
+description: "Elegant gowns and powerful silhouettes crafted for red carpets and award nights. ",
+price: 13999,
+originalPrice: 15999,
+image: Pic16,
+badges: ["Trending"],
+category: "Dresses"
+},
+{
+id: 17,
+name: "Heritage Harika Half Sarees",
+description: "Where traditional weaving meets youthful styling — perfect for pellikuthuru, festivities, and cultural events.",
 price: 3499,
+image: Pic17,
+badges: ["Best"],
+category: "Sarees"
+},
+{
+id: 18,
+name: "Elegant Organza Saree with Mirror Work & Ruffled Blouse ",
+description: "The lightweight fabric drapes effortlessly, making it a timeless choice for weddings, festive occasions, and parties.",
+price: 7999,
 image: Pic18,
 category: "Sarees"
 },
 {
 id: 19,
-name: "Modern Indo-Western Gown",
-description: "Fusion gown with metallic shimmer and cape sleeves",
-price: 3499,
-originalPrice: 4499,
+name: "Fit-to-Fantasy BlousesBlouse ",
+description: "Blouses that actually fit like a dream — sculpted, supportive, stunning.",
+price: 9999,
+originalPrice: 11999,
 image: Pic19,
-category: "Dresses"
-},
-{
-id: 20,
-name: "Mirror Work Lehenga",
-description: "Elegant lehenga set decorated with mirror panel patterns",
-price: 3499,
-image: Pic20,
-badges: ["New"],
-category: "Lehengas"
-},
-{
-id: 21,
-name: "Designer Palazzo Suit",
-description: "Stylish palazzo suit with embroidered kurti and chiffon dupatta",
-price: 160.00,
-image: Pic21,
-category: "Suits"
-},
-{
-id: 22,
-name: "Soft Organza Saree",
-description: "Beautiful organza saree with floral print and pearl border",
-price: 180.00,
-originalPrice: 230.00,
-image: Pic22,
-badges: ["Trending"],
 category: "Sarees"
 },
 {
-id: 23,
-name: "Heavy Embroidered Gown",
-description: "Floor-length gown with intricate embroidery and flare",
+id: 20,
+name: "Heritage Harika Half Sarees",
+description: "Where traditional weaving meets youthful styling — perfect for pellikuthuru, festivities, and cultural events.",
 price: 3499,
-image: Pic23,
-category: "Dresses"
+image: Pic20,
+badges: ["New"],
+category: "Sarees"
 },
 {
-id: 24,
-name: "Zardosi Bridal Lehenga",
-description: "Luxury bridal lehenga with premium zardosi and stonework",
-price: 1300.00,
-image: Pic24,
-badges: ["Best"],
-category: "Lehengas"
+id: 21,
+name: "Heritage Harika Half Sarees",
+description: "Where traditional weaving meets youthful styling — perfect for pellikuthuru, festivities, and cultural events.",
+price: 3499,
+image: Pic21,
+category: "Sarees"
 },
-
 ];
 
 interface CartItem extends Product {
@@ -282,7 +298,7 @@ name: "Celebrity Red Carpet Gown",
 description: "Signature red-carpet gown inspired by Bollywood divas",
 price: 499.00,
 originalPrice: 650.00,
-image: "https://images.unsplash.com/photo-1551022377-3af35c7c77b4?w=500&h=500&fit=crop",
+image: Pic27,
 badges: ["Trending", "Best"],
 category: "Celebrity Look"
 },
@@ -291,7 +307,7 @@ id: 202,
 name: "Star Embroidered Lehenga",
 description: "Designer lehenga worn by top movie stars in recent events",
 price: 999.00,
-image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&h=500&fit=crop",
+image: Pic28,
 badges: ["Premium"],
 category: "Celebrity Look"
 },
@@ -301,7 +317,7 @@ name: "Celebrity Saree Edit",
 description: "Elegant saree inspired by celebrity award show outfits",
 price: 375.00,
 originalPrice: 450.00,
-image: "https://images.unsplash.com/photo-1542060748-10c28b62716b?w=500&h=500&fit=crop",
+image: Pic29,
 badges: ["New"],
 category: "Celebrity Look"
 },
@@ -310,7 +326,39 @@ id: 204,
 name: "Iconic Film Look Dress",
 description: "Recreation of iconic movie costume in premium fabric",
 price: 225.00,
-image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=500&h=500&fit=crop",
+image: Pic30,
+category: "Celebrity Look"
+},
+{
+id: 205,
+name: "Iconic Film Look Dress",
+description: "Recreation of iconic movie costume in premium fabric",
+price: 225.00,
+image: celeb2,
+category: "Celebrity Look"
+},
+{
+id: 206,
+name: "Iconic Film Look Dress",
+description: "Recreation of iconic movie costume in premium fabric",
+price: 225.00,
+image: Pic32,
+category: "Celebrity Look"
+},
+{
+id: 207,
+name: "Iconic Film Look Dress",
+description: "Recreation of iconic movie costume in premium fabric",
+price: 225.00,
+image: Pic33,
+category: "Celebrity Look"
+},
+{
+id: 207,
+name: "Iconic Film Look Dress",
+description: "Recreation of iconic movie costume in premium fabric",
+price: 225.00,
+image: Pic34,
 category: "Celebrity Look"
 }
 ];
@@ -414,7 +462,7 @@ const sizes: Size[] = ['S', 'M', 'L', 'XL', 'XXL', 'XXXL', 'Custom'];
 return (
 <div className="min-h-screen bg-neutral-50">
 {/* New Arrivals Section */}
-<section className="bg-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+<section id="new-arrivals" className="bg-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
 <div className="max-w-7xl mx-auto">
 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-6 gap-4">
 <div>
@@ -436,14 +484,14 @@ onMouseLeave={() => setHoveredProduct(null)}
 <div className="relative bg-gray-100 aspect-[3/4] mb-3 sm:mb-4 overflow-hidden">
 <img
 src={Pic27}
-alt="Elegant Silk Saree"
+alt="Narayanpet Half Sarees"
 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
 />
 <button
 onClick={() => setQuickViewProduct({
 id: 101,
-name: "Elegant Silk Saree",
-description: "Traditional handwoven silk saree with intricate golden border work",
+name: "Narayanpet Half Sarees",
+description: "Where traditional weaving meets youthful styling — perfect for pellikuthuru, festivities, and cultural events.",
 price: 3499,
 image: Pic27,
 category: "Sarees"
@@ -473,9 +521,9 @@ selectedSizes[101] === size
 </div>
 </div>
 </div>
-<h3 className="font-medium mb-1 sm:mb-2 text-sm sm:text-base">Elegant Silk Saree</h3>
+<h3 className="font-medium mb-1 sm:mb-2 text-sm sm:text-base">Narayanpet Half Sarees</h3>
 <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 line-clamp-2">
-Traditional handwoven silk saree with intricate golden border work
+Where traditional weaving meets youthful styling — perfect for pellikuthuru, festivities, and cultural events.
 </p>
 <div className="flex items-center justify-between">
 <p className="font-semibold text-base sm:text-lg">₹3499</p>
@@ -483,8 +531,8 @@ Traditional handwoven silk saree with intricate golden border work
 onClick={() => {
 const product = {
 id: 101,
-name: "Elegant Silk Saree",
-description: "Traditional handwoven silk saree with intricate golden border work",
+name: "ENarayanpet Half Sarees",
+description: "Where traditional weaving meets youthful styling — perfect for pellikuthuru, festivities, and cultural events.",
 price: 3499,
 image: Pic27,
 category: "Sarees"
@@ -511,17 +559,17 @@ onMouseLeave={() => setHoveredProduct(null)}
 <div className="relative bg-gray-100 aspect-[3/4] mb-3 sm:mb-4 overflow-hidden">
 <img
 src={Pic28}
-alt="Designer Bridal Lehenga"
+alt="Kurti"
 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
 />
 <button
 onClick={() => setQuickViewProduct({
 id: 102,
-name: "Designer Bridal Lehenga",
-description: "Heavily embroidered bridal lehenga with zari and sequin work",
-price: 3499,
+name: "Pastel Couture Kurti",
+description: "Fit so dreamy it needs background music",
+price: 4999,
 image: Pic28,
-category: "Lehengas"
+category: "Kurti"
 })}
 className="absolute top-3 sm:top-4 right-3 sm:right-4 w-9 h-9 sm:w-10 sm:h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors shadow-md z-10"
 >
@@ -548,23 +596,23 @@ selectedSizes[102] === size
 </div>
 </div>
 </div>
-<h3 className="font-medium mb-1 sm:mb-2 text-sm sm:text-base">Designer Bridal Lehenga</h3>
+<h3 className="font-medium mb-1 sm:mb-2 text-sm sm:text-base">Pastel Couture Kurti</h3>
 <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 line-clamp-2">
-Heavily embroidered bridal lehenga with zari and sequin work
+Dripping so hard even the background music hits different.
 </p>
 <div className="flex items-center justify-between">
 <div className="flex items-center gap-2">
-<p className="font-semibold text-base sm:text-lg">₹3499</p>
+<p className="font-semibold text-base sm:text-lg">₹4999</p>
 </div>
 <button
 onClick={() => {
 const product = {
 id: 102,
-name: "Designer Bridal Lehenga",
-description: "Heavily embroidered bridal lehenga with zari and sequin work",
+name: "Pastel Couture Kurti",
+description: "Dripping so hard even the background music hits different.     ",
 price: 3499,
 image: Pic28,
-category: "Lehengas"
+category: "Kurti"
 };
 addToCart(product);
 }}
@@ -587,19 +635,19 @@ onMouseLeave={() => setHoveredProduct(null)}
 >
 <div className="relative bg-gray-100 aspect-[3/4] mb-3 sm:mb-4 overflow-hidden">
 <img
-src={Pic30}
+src={Pic26}
 alt="Floral Summer Dress"
 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
 />
 <button
 onClick={() => setQuickViewProduct({
 id: 103,
-name: "Floral Summer Dress",
-description: "Lightweight cotton dress with beautiful floral prints perfect for summer",
-price: 2999,
-originalPrice: 3999,
-image: Pic30,
-category: "Dresses"
+name: "BossBloom Structured Blazer",
+description: "Strong shoulders. Soft heart. Sharp mind. That’s the blazer era.",
+price: 6999,
+originalPrice: 7999,
+image: Pic26,
+category: "Blazer"
 })}
 className="absolute top-3 sm:top-4 right-3 sm:right-4 w-9 h-9 sm:w-10 sm:h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors shadow-md z-10"
 >
@@ -626,24 +674,24 @@ selectedSizes[103] === size
 </div>
 </div>
 </div>
-<h3 className="font-medium mb-1 sm:mb-2 text-sm sm:text-base">Floral Summer Dress</h3>
+<h3 className="font-medium mb-1 sm:mb-2 text-sm sm:text-base">BossBloom Structured Blazer</h3>
 <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 line-clamp-2">
-Lightweight cotton dress with beautiful floral prints perfect for summer
+Strong shoulders. Soft heart. Sharp mind. That’s the blazer era.
 </p>
 <div className="flex items-center justify-between">
 <div className="flex items-center gap-2">
-<p className="font-semibold text-base sm:text-lg">₹2999</p>
-<p className="text-xs sm:text-sm text-gray-400 line-through">₹3999</p>
+<p className="font-semibold text-base sm:text-lg">₹6999</p>
+<p className="text-xs sm:text-sm text-gray-400 line-through">₹7999</p>
 </div>
 <button
 onClick={() => {
 const product = {
 id: 103,
-name: "Floral Summer Dress",
-description: "Lightweight cotton dress with beautiful floral prints perfect for summer",
-price: 2999,
-originalPrice: 3999,
-image: Pic30,
+name: "BossBloom Structured Blazer",
+description: "Strong shoulders. Soft heart. Sharp mind. That’s the blazer era.",
+price: 6999,
+originalPrice: 7999,
+image: Pic26,
 category: "Dresses"
 };
 addToCart(product);
@@ -668,7 +716,7 @@ onMouseLeave={() => setHoveredProduct(null)}
 <div className="relative bg-gray-100 aspect-[3/4] mb-3 sm:mb-4 overflow-hidden">
 <img
 src= {Pic31}
-alt="Pastel Party Lehenga"
+alt="Premiere Royale Series"
 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
 />
 <div className="absolute top-3 sm:top-4 left-3 sm:left-4 flex gap-2 flex-wrap z-10">
@@ -678,7 +726,7 @@ className="w-full h-full object-cover group-hover:scale-105 transition-transform
 <button
 onClick={() => setQuickViewProduct({
 id: 104,
-name: "Pastel Party Lehenga",
+name: "Premiere Royale Series",
 description: "Contemporary lehenga in soft pastel shades with mirror work details",
 price: 13999,
 originalPrice: 14599,
@@ -711,7 +759,7 @@ selectedSizes[104] === size
 </div>
 </div>
 </div>
-<h3 className="font-medium mb-1 sm:mb-2 text-sm sm:text-base">Pastel Party Lehenga</h3>
+<h3 className="font-medium mb-1 sm:mb-2 text-sm sm:text-base">Premiere Royale Series</h3>
 <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 line-clamp-2">
 Contemporary lehenga in soft pastel shades with mirror work details
 </p>
@@ -760,7 +808,7 @@ scrollbar-width: none;
 `}</style>
 
 {/* Products Section */}
-<section id="Products" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+<section id="shop-by" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
 <div className="max-w-7xl mx-auto">
 <div className="mb-6 sm:mb-8">
 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light tracking-tight">Best Sellers</h2>
@@ -899,7 +947,7 @@ className="fixed bottom-6 sm:bottom-8 right-6 sm:right-8 bg-black text-white w-1
 )}
 
 {/* Celebrity Corner Section */}
-<section id="CelebrityCorner" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+<section id="trending" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
 <div className="max-w-7xl mx-auto">
 
 <div className="mb-6 sm:mb-8">
@@ -922,11 +970,11 @@ onMouseLeave={() => setHoveredProduct(null)}
 <div className="relative aspect-[3/4] overflow-hidden bg-gray-100">
 <img
 src={product.image}
-alt={product.name}
+// alt={product.name}
 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
 />
 
-{product.badges && (
+{/* {product.badges && (
 <div className="absolute top-2 left-2 flex gap-1 flex-wrap z-10">
 {product.badges.map(badge => (
 <span
@@ -937,10 +985,10 @@ className={`text-[10px] sm:text-xs px-1.5 py-0.5 rounded shadow-sm ${getBadgeCol
 </span>
 ))}
 </div>
-)}
+)} */}
 
 <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-<div className="flex flex-wrap gap-2 justify-center px-4">
+{/* <div className="flex flex-wrap gap-2 justify-center px-4">
 {['S', 'M', 'L', 'XL', 'XXL', 'XXXL', 'Custom'].map((size) => (
 <button
 key={size}
@@ -957,29 +1005,29 @@ selectedSizes[product.id] === size
 {size}
 </button>
 ))}
-</div>
+</div> */}
 </div>
 
-<button
+{/* <button
 onClick={() => setQuickViewProduct(product)}
 className="absolute top-2 right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-gray-100 z-10"
 >
 <Eye className="w-4 h-4 text-gray-700" />
-</button>
+</button> */}
 </div>
 
 <div className="p-2 sm:p-3 lg:p-4">
 <p className="text-[10px] sm:text-xs text-gray-500 uppercase tracking-wide mb-1">
 {product.category}
 </p>
-<h3 className="font-semibold text-xs sm:text-sm lg:text-base line-clamp-2">
+{/* <h3 className="font-semibold text-xs sm:text-sm lg:text-base line-clamp-2">
 {product.name}
 </h3>
 <p className="text-[10px] sm:text-xs text-gray-600 mb-2 line-clamp-2">
 {product.description}
-</p>
+</p> */}
 
-<div className="flex justify-between items-center">
+{/* <div className="flex justify-between items-center">
 <div className="flex items-center gap-1">
 <span className="font-bold text-sm sm:text-base">
 ${product.price.toFixed(2)}
@@ -1001,7 +1049,7 @@ selectedSizes[product.id]
 >
 {selectedSizes[product.id] ? `Add (${selectedSizes[product.id]})` : 'Select Size'}
 </button>
-</div>
+</div> */}
 </div>
 </div>
 ))}

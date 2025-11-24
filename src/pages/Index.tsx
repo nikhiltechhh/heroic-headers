@@ -4,7 +4,10 @@ import Hero from "@/components/Hero";
 import Products from "@/components/Products";
 import Videos from "@/components/Videos"
 // import About from "@/components/About";
-// import Footer from "@/components/Footer";
+// import Float from "@/components/Float";
+import Notifications from "@/components/Notifications";
+import Location from "@/components/Location";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -14,7 +17,10 @@ const Index = () => {
       <Products />
       <Videos />
       {/* <About /> */}
-      {/* <Footer /> */}
+      {/* <Float /> */}
+      <Notifications />
+      <Location />
+      <Footer />
     </div>
   );
 };

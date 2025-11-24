@@ -98,7 +98,9 @@ const Hero = () => {
       {/* Carousel Container */}
       <div className="px-4 sm:px-6 lg:px-8 py-6 md:py-10">
         <div
-          className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[500px] overflow-hidden rounded-xl shadow-lg"
+      
+  className="relative w-full h-[450px] sm:h-[500px] md:h-[600px] lg:h-[600px] overflow-hidden rounded-xl shadow-lg"
+
           onMouseEnter={() => setAutoPlay(false)}
           onMouseLeave={() => setAutoPlay(true)}
         >

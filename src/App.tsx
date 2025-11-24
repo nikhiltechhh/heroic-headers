@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+
 import Header from "@/components/Header";
 
 import Index from "./pages/Index";
@@ -11,35 +12,42 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// ------------------------------------
+// Wrapper that uses Router context
+// ------------------------------------
 const AppWrapper = () => {
   const location = useLocation();
-  const showHeaderFooter = location.pathname !== "/"; // hide for Index
+  const showHeader = location.pathname !== "/";
 
   return (
     <>
-      {showHeaderFooter && <Header />}
+      {showHeader && <Header />}
 
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-
-      {/* {showHeaderFooter && <Footer />} */}
     </>
   );
 };
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <AppWrapper />
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+// ------------------------------------
+// MAIN APP — BrowserRouter OUTERMOST
+// ------------------------------------
+const App = () => {
+  return (
+    <BrowserRouter>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+
+          <AppWrapper />
+        </TooltipProvider>
+      </QueryClientProvider>
+    </BrowserRouter>
+  );
+};
 
 export default App;

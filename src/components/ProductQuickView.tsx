@@ -194,7 +194,18 @@ const ProductQuickView: React.FC<ProductQuickViewProps> = ({ product, onClose, o
                       >
                         {size}
                       </button>
+                      
                     ))}
+                     {/* Ask An Expert */}
+               <button
+  onClick={() =>
+    window.open("https://wa.me/919966656775", "_blank")
+  }
+  className="flex items-center gap-2 text-sm font-semibold text-gray-700 hover:text-orange-600 transition-all hover:gap-3 group"
+>
+  <MessageCircle className="w-5 h-5 text-orange-500 group-hover:scale-110 transition-transform" />
+  Ask An Expert
+</button>
                   </div>
                 </div>
 
@@ -217,6 +228,7 @@ const ProductQuickView: React.FC<ProductQuickViewProps> = ({ product, onClose, o
                     >
                       <Minus className="w-4 h-4" />
                     </button>
+                    
                     <input
                       type="number"
                       value={quantity}
@@ -242,11 +254,8 @@ const ProductQuickView: React.FC<ProductQuickViewProps> = ({ product, onClose, o
                   </div>
                 </div>
 
-                {/* Ask An Expert */}
-                <button className="flex items-center gap-2 text-sm font-semibold text-gray-700 hover:text-orange-600 transition-all hover:gap-3 group">
-                  <MessageCircle className="w-5 h-5 text-orange-500 group-hover:scale-110 transition-transform" />
-                  Ask An Expert
-                </button>
+               
+
               </div>
 
               {/* Add to Cart Button */}
@@ -262,9 +271,9 @@ const ProductQuickView: React.FC<ProductQuickViewProps> = ({ product, onClose, o
                 >
                   ADD TO CART
                 </button>
-                <button className="w-12 h-12 sm:w-14 sm:h-14 border-2 border-gray-300 flex items-center justify-center hover:border-red-400 hover:bg-red-50 transition-all duration-300 group rounded-lg active:scale-95">
+                {/* <button className="w-12 h-12 sm:w-14 sm:h-14 border-2 border-gray-300 flex items-center justify-center hover:border-red-400 hover:bg-red-50 transition-all duration-300 group rounded-lg active:scale-95">
                   <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 group-hover:text-red-500 group-hover:fill-red-500 transition-all" />
-                </button>
+                </button> */}
               </div>
             </div>
           </div>

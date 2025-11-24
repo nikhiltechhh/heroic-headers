@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin, Heart } from 'lucide-react';
+import { Linkedin, Instagram, Twitter, Youtube, Mail, Phone, MapPin, Heart } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -18,55 +18,41 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <h2 className="text-3xl font-light mb-4 tracking-tight">KITSAC</h2>
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              Your trusted partner in achieving healthy, radiant skin. We believe in clean, effective skincare that delivers real results.
-            </p>
-            
-            {/* Newsletter */}
-            <div className="mb-6">
-              <h3 className="text-sm font-semibold uppercase tracking-wide mb-3">Stay Connected</h3>
-              <div className="flex gap-2">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Your email"
-                  className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-emerald-500 text-sm"
-                />
-                <button
-                  onClick={handleSubscribe}
-                  className="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors text-sm font-medium"
-                >
-                  Join
-                </button>
-              </div>
-            </div>
+           <h2 className="text-3xl font-light mb-4 tracking-tight">SWANKY STYLES</h2>
+<p className="text-gray-600 mb-6 leading-relaxed">
+  Elevate your wardrobe with our curated collection of chic and timeless pieces. At Swanky Styles, we celebrate individuality, elegance, and effortless fashion that turns heads wherever you go.
+</p>
 
+            
+          
             {/* Social Media */}
             <div>
               <h3 className="text-sm font-semibold uppercase tracking-wide mb-3">Follow Us</h3>
               <div className="flex gap-3">
                 <a
-                  href="#"
+                  href="https://www.instagram.com/swankystyles_in/?hl=en"
                   className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-colors"
                 >
                   <Instagram className="w-5 h-5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/rojabhaskar/"
                   className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-colors"
                 >
-                  <Facebook className="w-5 h-5" />
+                  <Linkedin className="w-5 h-5" />
                 </a>
+               <a
+  href="
+https://in.pinterest.com/swankystyles4u/?"
+  className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-colors"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+    <path d="M12 0C5.372 0 0 5.373 0 12c0 4.99 3.066 9.282 7.44 11.045-.103-.936-.196-2.37.041-3.39.215-.915 1.384-5.83 1.384-5.83s-.355-.71-.355-1.757c0-1.646.954-2.875 2.14-2.875 1.008 0 1.495.756 1.495 1.663 0 1.014-.644 2.527-.976 3.934-.277 1.17.588 2.122 1.744 2.122 2.093 0 3.5-2.755 3.5-6.012 0-2.492-1.677-4.36-4.737-4.36-3.33 0-5.406 2.5-5.406 5.083 0 1.011.39 2.094.877 2.683a.354.354 0 01.082.34c-.09.374-.292 1.17-.331 1.33-.052.212-.17.256-.394.154-1.466-.681-2.383-2.822-2.383-4.543 0-3.69 2.68-7.082 7.732-7.082 4.05 0 7.2 2.888 7.2 6.738 0 4.017-2.528 7.253-6.048 7.253-1.18 0-2.292-.613-2.668-1.338l-.725 2.757c-.262.995-.976 2.236-1.456 2.996 1.09.336 2.242.518 3.438.518 6.627 0 12-5.373 12-12S18.627 0 12 0z"/>
+  </svg>
+</a>
+
                 <a
-                  href="#"
-                  className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-colors"
-                >
-                  <Twitter className="w-5 h-5" />
-                </a>
-                <a
-                  href="#"
+                  href="https://www.youtube.com/@Swankystyles_in"
                   className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-colors"
                 >
                   <Youtube className="w-5 h-5" />
@@ -80,139 +66,50 @@ const Footer: React.FC = () => {
             <h3 className="text-sm font-semibold uppercase tracking-wide mb-4">Shop</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-gray-600 hover:text-emerald-600 transition-colors text-sm">
+                <a href="new-arrivals" className="text-gray-600 hover:text-emerald-600 transition-colors text-sm">
                   New Arrivals
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-emerald-600 transition-colors text-sm">
+                <a href="#shop-by" className="text-gray-600 hover:text-emerald-600 transition-colors text-sm">
                   Best Sellers
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-emerald-600 transition-colors text-sm">
-                  Cleanser
+                <a href="#trending" className="text-gray-600 hover:text-emerald-600 transition-colors text-sm">
+                  Celebrity Corner
                 </a>
               </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-emerald-600 transition-colors text-sm">
-                  Serums
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-emerald-600 transition-colors text-sm">
-                  Moisturizers
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-emerald-600 transition-colors text-sm">
-                  Sunscreen
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-emerald-600 transition-colors text-sm">
-                  Gift Sets
-                </a>
-              </li>
+             
             </ul>
           </div>
 
           {/* Help & Info */}
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wide mb-4">Help & Info</h3>
-            <ul className="space-y-3">
-              <li>
-                <a href="#" className="text-gray-600 hover:text-emerald-600 transition-colors text-sm">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-emerald-600 transition-colors text-sm">
-                  Contact Us
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-emerald-600 transition-colors text-sm">
-                  Shipping & Returns
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-emerald-600 transition-colors text-sm">
-                  Track Order
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-emerald-600 transition-colors text-sm">
-                  FAQs
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-emerald-600 transition-colors text-sm">
-                  Skin Quiz
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-emerald-600 transition-colors text-sm">
-                  Blog
-                </a>
-              </li>
-            </ul>
-          </div>
+         
 
           {/* Company */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wide mb-4">Company</h3>
-            <ul className="space-y-3 mb-6">
-              <li>
-                <a href="#" className="text-gray-600 hover:text-emerald-600 transition-colors text-sm">
-                  Our Story
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-emerald-600 transition-colors text-sm">
-                  Ingredients
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-emerald-600 transition-colors text-sm">
-                  Sustainability
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-emerald-600 transition-colors text-sm">
-                  Careers
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-emerald-600 transition-colors text-sm">
-                  Press
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-emerald-600 transition-colors text-sm">
-                  Affiliate Program
-                </a>
-              </li>
-            </ul>
+            
 
             {/* Contact Info */}
             <div className="space-y-3">
               <div className="flex items-start gap-2">
                 <Mail className="w-4 h-4 text-gray-400 mt-0.5 flex-shrink-0" />
                 <a href="mailto:hello@glowskin.com" className="text-sm text-gray-600 hover:text-emerald-600">
-                  info@kitsac.com
+                  swankystyles4u@gmail.com
                 </a>
               </div>
               <div className="flex items-start gap-2">
                 <Phone className="w-4 h-4 text-gray-400 mt-0.5 flex-shrink-0" />
                 <a href="tel:+1234567890" className="text-sm text-gray-600 hover:text-emerald-600">
-                  +91 98783738***
+                  +91 99666 56775
                 </a>
               </div>
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-gray-400 mt-0.5 flex-shrink-0" />
                 <p className="text-sm text-gray-600">
-                  Hyderabad<br />
+                  8-1-373, OU Colony, Shaikpet, Manikonda, Hyderabad<br />
                   INDIA
                 </p>
               </div>
@@ -222,7 +119,7 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Certifications & Trust Badges */}
-      <div className="border-t border-gray-200 bg-gray-50">
+      {/* <div className="border-t border-gray-200 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
             <div className="space-y-2">
@@ -259,7 +156,7 @@ const Footer: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-200 bg-white">
@@ -267,7 +164,7 @@ const Footer: React.FC = () => {
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-gray-600">
               <p className="flex items-center gap-1">
-                © 2025 KITSAC. 
+                © SWANKY STYLES. 
               </p>
             </div>
             <div className="flex flex-wrap justify-center gap-6 text-sm">

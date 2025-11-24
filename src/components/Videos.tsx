@@ -4,7 +4,7 @@ import Video3 from '@/assets/Video3.mp4';
 import Video2 from  '@/assets/Video2.mp4';
 import Video1 from '@/assets/Video1.mp4';
 import Video4 from '@/assets/Video4.mp4';
-import Video5 from '@/assets/Video5.mp4';
+import Video5 from '@/assets/VideoR.mp4';
 import Video6 from '@/assets/Video6.mp4';
 import Video7 from '@/assets/Video7.mp4';
 import Video8 from '@/assets/Video8.mp4';
